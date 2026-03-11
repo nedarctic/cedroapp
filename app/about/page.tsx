@@ -8,8 +8,10 @@ import { AboutHero } from "@/components/about-hero";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { TravelStoryCard } from "@/components/travel-story-card";
 import { ClientTestimonialCard } from "@/components/client-testimonial-card";
+import { travelStories, teamMembers } from "@/lib/data";
+import Link from 'next/link';
 
-export default function About () {
+export default function About() {
     return (
         <main className="min-h-screen w-full flex flex-col justify-center items-center">
 
@@ -51,10 +53,15 @@ export default function About () {
 
                 {/* grid containing team member cards */}
                 <div className="grid grid-cols-3 gap-8">
-                    <TeamMemberCard image={"/team/lornah.jpg"} name={"Lornah Tangus"} designation={"Founder, Travel & Tour Specialist"} description={"With over 15 years of experience in the travel industry, Lornah leads Cedro Adventures with a passion for creating meaningful, well-curated travel experiences that connect people to places and cultures."} />
-                    <TeamMemberCard image={"/team/kelvin.jpg"} name={"Kelvin Kimutai"} designation={"Finance & Operations Manager"} description={"Kelvin oversees finance and operations, ensuring that every tour runs smoothly, sustainably, and efficiently while maintaining the highest standards of service and accountability."} />
-                    <TeamMemberCard image={"/team/ruto.jpg"} name={"Emmanuel Kipruto"} designation={"Digital Marketing"} description={"Emmanuel drives Cedro Adventures' digital presence, crafting engaging content and marketing strategies that connect travelers with inspiring destinations and unforgettable experiences."} />
-                    <TeamMemberCard image={"/team/jus.jpg"} name={"Justus Kimtai"} designation={"Software Developer"} description={"Justus designs and builds the digital systems behind Cedro Adventures, ensuring seamless user experiences, reliable platforms, and scalable technology that supports the company’s growth."} />
+                    {teamMembers.map((member) => (
+                        <TeamMemberCard
+                            key={member.name}
+                            image={member.image}
+                            name={member.name}
+                            designation={member.designation}
+                            description={member.description}
+                        />
+                    ))}
                 </div>
 
             </section>
@@ -84,9 +91,9 @@ export default function About () {
                 {/* grid with travel story cards */}
                 <div className="flex flex-col justify-center items-center">
                     <div className="grid grid-cols-2 gap-8">
-                        <TravelStoryCard date={"March 30, 2024"} image={"/travel-stories/amboseli.jpg"} story={"A magical safari experience is a quite relative experience as a lot of people like to argue. However, a safari through the vast Amboseli savannah shatters every expectation one had in mind."} title={"Magical Safari Experience with Cedro Adventures at Amboseli"} />
-                        <TravelStoryCard date={"July 12, 2024"} image={"/travel-stories/rwanda.jpg"} story={"Everyone thinks they love wildlife nature until they visit Rwanda, then they fall in love with it all over again but this time, Rwanda-style. The majestic gorillas not only dominate the forested Rwandan hilly ranges at the Volcanes but also the hearts of everyone who visits."} title={"Gorillas in the Mist with Cedro Adventures"} />
-                        <TravelStoryCard date={"August 08, 2025"} image={"/travel-stories/zanzibar.jpg"} story={"Zanzibar has a way to steal anyone's heart, including anyone claiming to be introverted. The Zanzibar Archipellago experience with Cedro Adventures will take your breath away. This isn't a promise - it's guaranteed."} title={"Explore the beauty of Zanzibar with Cedro Adventures"} />
+                        {travelStories.map(({ title, image, excerpt, date, slug }) => (
+                            <Link key={slug} href={`/blogs/${slug}`} ><TravelStoryCard title={title} image={image} date={date} story={excerpt} /></Link>
+                        ))}
                     </div>
 
                 </div>

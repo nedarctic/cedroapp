@@ -1,4 +1,4 @@
-export interface SafariDetails {
+export interface Tour {
     destination: string;
     duration: string;
     dates: string;
@@ -10,11 +10,17 @@ export interface SafariDetails {
     excluded: string[];
     activities: string[];
     link: string;
+    heroImage:string;
     images: string[];
     slug: string;
+    itinerary: {
+        day: string;
+        title: string;
+        activities: string[]
+    }[]
 }
 
-export type Blog = {
+export interface Blog {
     slug: string;
     title: string;
     date: string;

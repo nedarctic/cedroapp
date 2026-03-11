@@ -1,39 +1,40 @@
 import { PiFacebookLogoLight, PiWhatsappLogoLight, PiInstagramLogoLight, PiLinkedinLogoLight } from "react-icons/pi";
-import { SafariDetails, Blog } from "@/lib/types";
+import { Tour, Blog } from "@/lib/types";
 
 export const destination_items = [
-    { label: 'Kenya', href: '/destinations/kenya' },
-    { label: 'Tanzania', href: '/destinations/tanzania' },
-    { label: 'Zanzibar', href: '/destinations/zanzibar' },
-    { label: 'Rwanda', href: '/destinations/rwanda' },
+  { label: 'Kenya', href: '/destinations/kenya' },
+  { label: 'Tanzania', href: '/destinations/tanzania' },
+  { label: 'Zanzibar', href: '/destinations/zanzibar' },
+  { label: 'Rwanda', href: '/destinations/rwanda' },
 ];
 
 export const utility_items = [
-    { label: 'Privacy Policy', href: '/privacy-policy' },
-    { label: 'Terms of Service', href: '/terms-of-service' },
-    { label: 'FAQs', href: '/faq' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms-of-service' },
+  { label: 'FAQs', href: '/faq' },
 ];
 
 export const pages_items = [
-    { label: 'Tours', href: '/tours' },
-    { label: 'Destinations', href: '/destinations' },
-    { label: 'About', href: '/about' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Contact', href: '/contact' },
+  { label: 'Tours', href: '/tours' },
+  { label: 'Destinations', href: '/destinations' },
+  { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export const social_items = [
-    { label: 'Facebook', href: 'https://facebook.com/cedroadventuresEA', logo: PiFacebookLogoLight },
-    { label: 'WhatsApp', href: 'https://wa.me/+254721174008', logo: PiWhatsappLogoLight },
-    { label: 'Instagram', href: 'https://www.instagram.com/cedroadventures', logo: PiInstagramLogoLight },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/cedro-adventures', logo: PiLinkedinLogoLight },
+  { label: 'Facebook', href: 'https://facebook.com/cedroadventuresEA', logo: PiFacebookLogoLight },
+  { label: 'WhatsApp', href: 'https://wa.me/+254721174008', logo: PiWhatsappLogoLight },
+  { label: 'Instagram', href: 'https://www.instagram.com/cedroadventures', logo: PiInstagramLogoLight },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/cedro-adventures', logo: PiLinkedinLogoLight },
 ];
 
 export const email = { label: "info@cedroadventures.com", href: "mailto:info@cedroadventures.com" };
 export const phone = { label: "(+254) 721 174 008", href: "callto:0721234567" };
 
 // tour details
-export const maasai_mara_safari: SafariDetails = {
+export const tours: Tour[] = [
+  {
     destination: "Kenya",
     dates: "Anytime",
     duration: "4 Days / 3 Nights",
@@ -42,34 +43,89 @@ export const maasai_mara_safari: SafariDetails = {
     title: "4-Days Maasai Mara Kenyan Safari",
     intro: "Step into a world where wildlife roams freely and every sunrise brings a new adventure. Over four days, witness Africa’s iconic animals, vast landscapes, and vibrant culture, creating memories that will last a lifetime. The Maasai Mara is not just a destination; it’s an experience that becomes a part of you.",
     included: [
-        "4 days / 3 nights Maasai Mara safari",
-        "Transport from Nairobi to Maasai Mara and back",
-        "Services of a professional safari guide/driver",
-        "Game drives in Maasai Mara National Reserve",
-        "3 nights’ accommodation at Sentrim Mara Camp",
-        "Meals during the safari (as per camp program)",
-        "Safari vehicle with pop-up roof for wildlife viewing"
+      "4 days / 3 nights Maasai Mara safari",
+      "Transport from Nairobi to Maasai Mara and back",
+      "Services of a professional safari guide/driver",
+      "Game drives in Maasai Mara National Reserve",
+      "3 nights’ accommodation at Sentrim Mara Camp",
+      "Meals during the safari (as per camp program)",
+      "Safari vehicle with pop-up roof for wildlife viewing"
     ],
     excluded: [
-        "International and domestic flights",
-        "Visa fees and travel insurance",
-        "Personal expenses (souvenirs, drinks, tips)",
-        "Optional activities not listed in the itinerary",
-        "Anything not explicitly mentioned as included",
+      "International and domestic flights",
+      "Visa fees and travel insurance",
+      "Personal expenses (souvenirs, drinks, tips)",
+      "Optional activities not listed in the itinerary",
+      "Anything not explicitly mentioned as included",
     ],
     activities: [
-        "Guided wildlife game drives in Maasai Mara",
-        "Big Five and big cats viewing (lion, leopard, cheetah)",
-        "Birdwatching (over 500 bird species)",
-        "Scenic drives through savannah grasslands and acacia woodlands",
-        "Cultural and landscape exploration of the Maasai Mara ecosystem",
+      "Guided wildlife game drives in Maasai Mara",
+      "Big Five and big cats viewing (lion, leopard, cheetah)",
+      "Birdwatching (over 500 bird species)",
+      "Scenic drives through savannah grasslands and acacia woodlands",
+      "Cultural and landscape exploration of the Maasai Mara ecosystem",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Nairobi to Maasai Mara",
+        activities: [
+          "Pick-up from Nairobi hotel or airport",
+          "Scenic drive through the Great Rift Valley",
+          "Arrival at Maasai Mara and lunch at the camp",
+          "Afternoon game drive in the Maasai Mara National Reserve",
+          "Dinner and overnight stay at the camp"
+        ]
+      },
+      {
+        day: "Day 2",
+        title: "Full-Day Game Drive in Maasai Mara",
+        activities: [
+          "Early morning breakfast at the camp",
+          "Full-day game drive with picnic lunch",
+          "Big Five and big cats wildlife viewing",
+          "Exploration of savannah grasslands and river ecosystems",
+          "Return to camp for dinner and overnight stay"
+        ]
+      },
+      {
+        day: "Day 3",
+        title: "Maasai Mara Exploration",
+        activities: [
+          "Morning game drive at sunrise",
+          "Optional Maasai village visit (extra cost)",
+          "Lunch and leisure time at the camp",
+          "Afternoon game drive",
+          "Dinner and overnight stay at the camp"
+        ]
+      },
+      {
+        day: "Day 4",
+        title: "Maasai Mara to Nairobi",
+        activities: [
+          "Breakfast at the camp",
+          "Check-out and departure from Maasai Mara",
+          "Drive back to Nairobi",
+          "Drop-off at hotel or airport"
+        ]
+      }
     ],
     link: "/tours/maasai_mara_safari",
-    images: ["/popular-tours/maasai-mara.jpg"],
+    heroImage: "/popular-tours/maasai-mara.jpg",
     slug: "maasai_mara_safari",
-};
+    images: [
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-1.jpg",
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-2.jpg",
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-3.jpg",
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-4.jpg",
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-5.jpg",
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-6.jpg",
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-7.jpg",
+      "/popular-tours/maasai-mara-galore/maasai-mara-galore-8.jpg",
+    ],
+  },
 
-export const kenya_wildlife_safari: SafariDetails = {
+  {
     destination: "Kenya",
     dates: "Anytime",
     duration: "3 Days / 2 Nights",
@@ -78,34 +134,79 @@ export const kenya_wildlife_safari: SafariDetails = {
     title: "3-day Kenyan wildlife Safari",
     intro: "Experience Kenya’s iconic wildlife on this immersive 3-day safari to Amboseli National Park. Set against the breathtaking backdrop of Mount Kilimanjaro, this short yet rewarding journey offers incredible elephant encounters, open savannah landscapes, and unforgettable game drives, perfect for travelers seeking a classic Kenyan safari in limited time.",
     included: [
-        "3 days / 2 nights Amboseli safari",
-        "Road transport from Nairobi to Amboseli and return",
-        "Professional English-speaking safari guide/driver",
-        "Game drives in Amboseli National Park",
-        "2 nights’ accommodation at Tulia Amboseli Safari Camp",
-        "Meals during the safari (as per camp program)",
-        "Safari vehicle with pop-up roof for wildlife viewing",
+      "3 days / 2 nights Amboseli safari",
+      "Road transport from Nairobi to Amboseli and return",
+      "Professional English-speaking safari guide/driver",
+      "Game drives in Amboseli National Park",
+      "2 nights’ accommodation at Tulia Amboseli Safari Camp",
+      "Meals during the safari (as per camp program)",
+      "Safari vehicle with pop-up roof for wildlife viewing",
     ],
     excluded: [
-        "International and domestic flights",
-        "Visa fees and travel insurance",
-        "Personal expenses (drinks, laundry, souvenirs)",
-        "Tips and gratuities",
-        "Optional activities not mentioned in the itinerary",
+      "International and domestic flights",
+      "Visa fees and travel insurance",
+      "Personal expenses (drinks, laundry, souvenirs)",
+      "Tips and gratuities",
+      "Optional activities not mentioned in the itinerary",
     ],
     activities: [
-        "Guided game drives in Amboseli National Park",
-        "Elephant viewing in their natural habitat",
-        "Scenic views of Mount Kilimanjaro",
-        "Wildlife photography opportunities",
-        "Birdwatching and nature observation",
+      "Guided game drives in Amboseli National Park",
+      "Elephant viewing in their natural habitat",
+      "Scenic views of Mount Kilimanjaro",
+      "Wildlife photography opportunities",
+      "Birdwatching and nature observation",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Nairobi to Amboseli National Park",
+        activities: [
+          "Morning pick-up from Nairobi",
+          "Drive to Amboseli National Park",
+          "Arrival and lunch at the safari camp",
+          "Afternoon game drive with views of Mount Kilimanjaro",
+          "Dinner and overnight stay at the camp"
+        ]
+      },
+      {
+        day: "Day 2",
+        title: "Full-Day Amboseli Game Drives",
+        activities: [
+          "Early morning game drive",
+          "Breakfast at the camp",
+          "Mid-morning and afternoon game drives",
+          "Elephant viewing and wildlife photography",
+          "Dinner and overnight stay at the camp"
+        ]
+      },
+      {
+        day: "Day 3",
+        title: "Amboseli to Nairobi",
+        activities: [
+          "Breakfast at the camp",
+          "Final short game drive (time permitting)",
+          "Departure from Amboseli",
+          "Drive back to Nairobi",
+          "Drop-off at hotel or airport"
+        ]
+      }
     ],
     link: "/tours/kenya_wildlife_safari",
-    images: ["/popular-tours/amboseli.jpg"],
+    heroImage: "/popular-tours/amboseli.jpg",
     slug: "kenya_wildlife_safari",
-}
+    images: [
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-1.jpg",
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-2.jpg",
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-3.jpg",
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-4.jpg",
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-5.jpg",
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-6.jpg",
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-7.jpg",
+      "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-8.jpg",
+    ],
+  },
 
-export const kenya_luxury_safari: SafariDetails = {
+  {
     destination: "Kenya",
     dates: "Anytime",
     duration: "6 Days / 5 Nights",
@@ -114,37 +215,114 @@ export const kenya_luxury_safari: SafariDetails = {
     title: "Kenya Luxury Safari Experience",
     intro: "Indulge in an exceptional 6-day luxury safari through two of Kenya’s most celebrated wildlife destinations—Lake Nakuru National Park and the world-famous Maasai Mara. Designed for comfort, exclusivity, and unforgettable encounters, this private safari combines elegant lodges, expert guiding, and extraordinary wildlife viewing during the iconic migration season.",
     included: [
-        "6 days / 5 nights private luxury safari",
-        "Private transport in a 4x4 safari vehicle",
-        "Meet and greet services in Nairobi",
-        "Professional, experienced safari guide/driver",
-        "Game drives in Lake Nakuru & Maasai Mara National Reserves",
-        "2 nights at Sarova Lion Hill Game Lodge",
-        "3 nights at Sarova Mara Game Camp",
-        "All meals during the safari (as per lodge program)",
-        "Park entry fees for all scheduled destinations",
+      "6 days / 5 nights private luxury safari",
+      "Private transport in a 4x4 safari vehicle",
+      "Meet and greet services in Nairobi",
+      "Professional, experienced safari guide/driver",
+      "Game drives in Lake Nakuru & Maasai Mara National Reserves",
+      "2 nights at Sarova Lion Hill Game Lodge",
+      "3 nights at Sarova Mara Game Camp",
+      "All meals during the safari (as per lodge program)",
+      "Park entry fees for all scheduled destinations",
     ],
     excluded: [
-        "International and domestic flights",
-        "Visa fees and travel insurance",
-        "Personal expenses (premium drinks, laundry, souvenirs)",
-        "Tips and gratuities",
-        "Optional activities not listed in the itinerary",
-        "Any items not expressly stated as included",
+      "International and domestic flights",
+      "Visa fees and travel insurance",
+      "Personal expenses (premium drinks, laundry, souvenirs)",
+      "Tips and gratuities",
+      "Optional activities not listed in the itinerary",
+      "Any items not expressly stated as included",
     ],
     activities: [
-        "Guided game drives in Lake Nakuru National Park",
-        "Rhino, flamingo, and Rothschild’s giraffe viewing",
-        "Scenic exploration of Lake Nakuru landscapes",
-        "Guided game drives in the Maasai Mara",
-        "Big Five and Great Migration wildlife viewing",
-        "Wildlife photography and birdwatching",
-        "Optional Lake Naivasha boat excursion (time permitting)",
+      "Guided game drives in Lake Nakuru National Park",
+      "Rhino, flamingo, and Rothschild’s giraffe viewing",
+      "Scenic exploration of Lake Nakuru landscapes",
+      "Guided game drives in the Maasai Mara",
+      "Big Five and Great Migration wildlife viewing",
+      "Wildlife photography and birdwatching",
+      "Optional Lake Naivasha boat excursion (time permitting)",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Nairobi to Lake Nakuru National Park",
+        activities: [
+          "Meet and greet in Nairobi",
+          "Drive to Lake Nakuru National Park",
+          "Lunch at the lodge",
+          "Afternoon game drive with rhino and flamingo viewing",
+          "Dinner and overnight stay at Sarova Lion Hill Game Lodge"
+        ]
+      },
+      {
+        day: "Day 2",
+        title: "Lake Nakuru to Maasai Mara",
+        activities: [
+          "Breakfast at the lodge",
+          "Drive to the Maasai Mara National Reserve",
+          "Arrival and lunch at the camp",
+          "Afternoon game drive in Maasai Mara",
+          "Dinner and overnight stay at Sarova Mara Game Camp"
+        ]
+      },
+      {
+        day: "Day 3",
+        title: "Full-Day Maasai Mara Safari",
+        activities: [
+          "Early breakfast",
+          "Full-day game drive with picnic lunch",
+          "Big Five and Great Migration viewing (seasonal)",
+          "Wildlife photography opportunities",
+          "Return to camp for dinner and overnight stay"
+        ]
+      },
+      {
+        day: "Day 4",
+        title: "Maasai Mara Exploration",
+        activities: [
+          "Morning game drive",
+          "Leisure time at the lodge",
+          "Optional hot air balloon safari (extra cost)",
+          "Afternoon game drive",
+          "Dinner and overnight stay at the camp"
+        ]
+      },
+      {
+        day: "Day 5",
+        title: "Maasai Mara Leisure Day",
+        activities: [
+          "Breakfast at the camp",
+          "Relaxation and scenic views",
+          "Optional cultural visit or nature walk",
+          "Evening game drive",
+          "Farewell dinner and overnight stay"
+        ]
+      },
+      {
+        day: "Day 6",
+        title: "Return to Nairobi",
+        activities: [
+          "Breakfast at the camp",
+          "Check-out and drive back to Nairobi",
+          "Drop-off at hotel or airport"
+        ]
+      }
     ],
     link: "/tours/kenya_luxury_safari",
-    images: ["/popular-tours/kenya-luxury.jpg"],
+    heroImage: "/popular-tours/kenya-luxury.jpg",
     slug: "kenya_luxury_safari",
-}
+    images: [
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-1.jpg",
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-2.jpg",
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-3.jpg",
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-4.jpg",
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-5.jpg",
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-6.jpg",
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-7.jpg",
+      "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-8.jpg",
+    ],
+  },
+]
 
 export const travelStories: Blog[] = [
   {
@@ -239,5 +417,71 @@ export const travelStories: Blog[] = [
       conclusion:
         "Zanzibar does not demand attention — it invites presence. By the end of the journey, visitors leave not only refreshed but transformed by the island’s quiet beauty and timeless rhythm."
     }
+  }
+];
+
+export const teamMembers = [
+  {
+    image: "/team/lornah.jpg",
+    name: "Lornah Tangus",
+    designation: "Founder, Travel & Tour Specialist",
+    description:
+      "With over 15 years of experience in the travel industry, Lornah leads Cedro Adventures with a passion for creating meaningful, well-curated travel experiences that connect people to places and cultures."
+  },
+  {
+    image: "/team/kelvin.jpg",
+    name: "Kelvin Kimutai",
+    designation: "Finance & Operations Manager",
+    description:
+      "Kelvin oversees finance and operations, ensuring that every tour runs smoothly, sustainably, and efficiently while maintaining the highest standards of service and accountability."
+  },
+  {
+    image: "/team/ruto.jpg",
+    name: "Emmanuel Kipruto",
+    designation: "Digital Marketing",
+    description:
+      "Emmanuel drives Cedro Adventures' digital presence, crafting engaging content and marketing strategies that connect travelers with inspiring destinations and unforgettable experiences."
+  },
+  {
+    image: "/team/tabitha.jpg",
+    name: "Tabitha Chebet",
+    designation: "Tour Consultant",
+    description:
+      "Tabitha works closely with travelers to design personalized tour experiences, offering expert guidance, local insight, and attentive support to ensure every journey is seamless and memorable."
+  },
+  {
+    image: "/team/justus.jpg",
+    name: "Justus Kimtai",
+    designation: "Software Developer",
+    description:
+      "Justus designs and builds the digital systems behind Cedro Adventures, ensuring seamless user experiences, reliable platforms, and scalable technology that supports the company’s growth."
+  }
+];
+
+export const faqs = [
+  {
+    question: "How do I book a safari with Cedro Adventures?",
+    answer:
+      "You can book directly through our website by selecting your preferred tour and submitting a booking request. Our team will then contact you to finalize the details and confirm availability."
+  },
+  {
+    question: "Are your safaris suitable for first-time travelers?",
+    answer:
+      "Absolutely. Our itineraries are designed to be enjoyable for both first-time visitors and experienced travelers, with professional guides ensuring comfort, safety, and enriching experiences throughout the journey."
+  },
+  {
+    question: "What is included in the safari price?",
+    answer:
+      "Each safari includes accommodation, transport, professional guide services, scheduled game drives, and meals as specified in the tour details. Anything not included is clearly listed under the ‘Excluded’ section."
+  },
+  {
+    question: "Can tours be customized?",
+    answer:
+      "Yes. We specialize in tailor-made experiences and can customize itineraries based on your preferences, travel dates, group size, and interests."
+  },
+  {
+    question: "When is the best time to go on safari?",
+    answer:
+      "Safaris run year-round, but the best time depends on what you want to experience. Our team will advise you based on wildlife movements, weather conditions, and your travel goals."
   }
 ];

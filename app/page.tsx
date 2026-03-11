@@ -15,6 +15,7 @@ import { ViewMore } from "@/components/view-more";
 import { PopularTourCard } from "@/components/popular-tour-card";
 import { ClientTestimonialCard } from "@/components/client-testimonial-card";
 import { TravelStoryCard } from "@/components/travel-story-card";
+import { travelStories } from '@/lib/data'
 
 export default function Home() {
   return (
@@ -168,9 +169,9 @@ export default function Home() {
         {/* grid with travel story cards */}
         <div className="flex flex-col justify-center items-center">
           <div className="grid grid-cols-2 gap-8">
-            <TravelStoryCard date={"March 30, 2024"} image={"/travel-stories/amboseli.jpg"} story={"A magical safari experience is a quite relative experience as a lot of people like to argue. However, a safari through the vast Amboseli savannah shatters every expectation one had in mind."} title={"Magical Safari Experience with Cedro Adventures at Amboseli"} />
-            <TravelStoryCard date={"July 12, 2024"} image={"/travel-stories/rwanda.jpg"} story={"Everyone thinks they love wildlife nature until they visit Rwanda, then they fall in love with it all over again but this time, Rwanda-style. The majestic gorillas not only dominate the forested Rwandan hilly ranges at the Volcanes but also the hearts of everyone who visits."} title={"Gorillas in the Mist with Cedro Adventures"} />
-            <TravelStoryCard date={"August 08, 2025"} image={"/travel-stories/zanzibar.jpg"} story={"Zanzibar has a way to steal anyone's heart, including anyone claiming to be introverted. The Zanzibar Archipellago experience with Cedro Adventures will take your breath away. This isn't a promise - it's guaranteed."} title={"Explore the beauty of Zanzibar with Cedro Adventures"} />
+            {travelStories.map(({ title, image, excerpt, date, slug }) => (
+              <Link key={slug} href={`/blogs/${slug}`} ><TravelStoryCard title={title} image={image} date={date} story={excerpt} /></Link>
+            ))}
           </div>
 
           <ViewMore path={"blogs"} color={"black"} />

@@ -5,7 +5,7 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 
 export function PopularTourCard({ title, destination, duration, dates, group_size, special_offer, price, image, link }: { title: string; destination: string; duration: string; dates: string; group_size?: string; special_offer?: boolean; price: string; image: string, link: string }) {
     return (
-        <Link href={link} target="_blank" className="flex flex-col space-y-4 justify-start items-start h-150 w-125 border border-black bg-white">
+        <Link href={link} className="flex flex-col space-y-4 justify-start items-start h-150 w-125 border border-black bg-white">
 
             {/* overlay + image section */}
             <div className="relative w-full h-1/2">

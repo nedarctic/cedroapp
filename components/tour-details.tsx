@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { SafariDetails } from '@/lib/types';
+import { Tour } from '@/lib/types';
+import Image from 'next/image';
 
-export function TourDetails({ safari }: { safari: SafariDetails }) {
+export function TourDetails({ safari }: { safari: Tour }) {
 
     const [activeTab, setActiveTab] = useState<"Details" | "Itinerary" | "Gallery">("Details");
 
@@ -12,7 +13,7 @@ export function TourDetails({ safari }: { safari: SafariDetails }) {
     }
 
     return (
-        <div className="flex flex-col items-center justify-start py-4 px-6 border w-11/12 min-h-screen border-black bg-gray-300 mb-10">
+        <div className="flex flex-col items-center justify-start py-6 px-6 border w-11/12 min-h-screen border-black bg-gray-300 mb-10">
 
             {/* tab buttons */}
             <div className="flex items-center space-x-6">
@@ -58,25 +59,41 @@ export function TourDetails({ safari }: { safari: SafariDetails }) {
             </div>)}
 
             {/* data to show if itinerary tab is active */}
-            {activeTab === "Itinerary" && (<div className="flex flex-col items-center justify-center p-10">
+            {activeTab === "Itinerary" && (<div className="flex flex-col items-start justify-center w-full p-10">
 
                 {/* title */}
-                <h1 className="text-black text-xl font-bold mb-2">Itinerary:</h1>
+                <h1 className="text-black text-xl font-bold mb-2">Itinerary</h1>
 
                 {/* day and title with bulleted details below it */}
+                {safari.itinerary.map(({ day, title, activities }) => (
+                    <div key={title} className="py-6">
+                        <h1 className="text-black text-lg font-bold">{day}: {title}</h1>
+                        <ul className="list-disc">
+                            {activities.map((activity) => (
+                                <li key={activity} className="font-normal text-black text-md">{activity}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
 
 
             </div>)}
 
             {/* data to show if gallery tab is active */}
-            {activeTab === "Gallery" && (<div className="flex flex-col items-center justify-center p-10">
+            {activeTab === "Gallery" && (
+                <div className="flex flex-col items-center justify-center w-full min-h-screen pt-10">
 
-                {/* grid with images related with tour */}
-                <div className="grid grid-cols-2 gap-6">
+                    {/* grid with images related with tour */}
+                    <div className="grid grid-cols-2 gap-6 w-full min-h-screen">
+                        {safari.images.map((image) => (
+                            <div className="relative w-full aspect-4/3">
+                                <Image src={image} alt={image} priority fill className="object-cover border border-black" />
+                            </div>
+                        ))}
+                    </div>
 
                 </div>
-
-            </div>)}
+            )}
 
         </div>
     );

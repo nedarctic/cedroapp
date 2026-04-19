@@ -1,17 +1,18 @@
-import Image from "next/image";
-import { FaLocationDot, FaRegClock, FaCalendarDays } from "react-icons/fa6";
-import { HiOutlineUserGroup } from "react-icons/hi";
-import { AiOutlineDollar } from "react-icons/ai";
-import Link from 'next/link';
-import { HiArrowLongRight } from "react-icons/hi2";
-import { TourDetails } from '@/components/tour-details';
-import { tours, faqs } from "@/lib/data";
-import type { Tour } from '@/lib/types'
-import { SectionHeadline } from '@/components/section-headline';
-import { FaqCard } from "@/components/faq-card";
-import { notFound } from "next/navigation";
+import { AccordionMultiple } from "@/components/accordion-multiple";
 import { PopularTourCard } from "@/components/popular-tour-card";
+import { SectionHeadline } from '@/components/section-headline';
+import TimelineComponent from "@/components/timeline-component";
+import { TourDetails } from '@/components/tour-details';
 import { ViewMore } from "@/components/view-more";
+import { tours } from "@/lib/data";
+import type { Tour } from '@/lib/types';
+import Image from "next/image";
+import Link from 'next/link';
+import { notFound } from "next/navigation";
+import { AiOutlineDollar } from "react-icons/ai";
+import { FaCalendarDays, FaLocationDot, FaRegClock } from "react-icons/fa6";
+import { HiOutlineUserGroup } from "react-icons/hi";
+import { HiArrowLongRight } from "react-icons/hi2";
 
 export async function getTour(slug: string): Promise<Tour | null> {
     try {
@@ -41,7 +42,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
     if (!safari || !otherTours || otherTours.length < 1) notFound();
 
     return (
-        <main className="min-h-screen flex flex-col items-center justify-start bg-white w-full pt-40 px-24">
+        <main className="min-h-screen flex flex-col items-center justify-start bg-white w-full pt-40 px-8 sm:px-12 lg:px-24">
 
             {/* title */}
             <div className="flex flex-col space-y-4 items-center justify-between w-full">
@@ -109,6 +110,8 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
 
                 </div>
 
+
+
             </div>
 
 
@@ -116,13 +119,21 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
 
             <TourDetails safari={safari} />
 
+            <section className="w-full min-h-screen flex flex-col items-center bg-white pt-12 pb-24">
+                <div className="flex flex-col items-start w-11/12 mb-3">
+                    <h1 className="text-black text-2xl font-bold mb-2 my-3 self-start">Itinerary</h1>
+                </div>
+
+                <TimelineComponent itinerary={safari.itinerary} />
+            </section>
+
             {/* faqs */}
 
             <section className="w-full min-h-screen flex flex-col items-center bg-white py-24">
 
                 <SectionHeadline title="Frequently Asked Questions" color="black" />
 
-                <div className="w-11/12 md:w-2/3 flex flex-col space-y-6">
+                {/* <div className="w-11/12 md:w-2/3 flex flex-col space-y-6">
                     {faqs.map((faq) => (
                         <FaqCard
                             key={faq.question}
@@ -130,7 +141,9 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                             answer={faq.answer}
                         />
                     ))}
-                </div>
+                </div> */}
+
+                <AccordionMultiple />
 
             </section>
 

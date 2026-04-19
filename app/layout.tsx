@@ -3,6 +3,10 @@ import { roboto } from "@/app/fonts";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import "./globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Cedro Adventures | Unforgettable travel experiences.",
@@ -15,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body
         className={`${roboto.className} antialiased`}
       >

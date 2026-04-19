@@ -24,82 +24,94 @@ export default async function BlogDetails({ params }: { params: Promise<{ slug: 
     if (!otherBlogs) return null;
 
     return (
-        <main className="min-h-screen flex flex-col items-center bg-white dark:bg-black w-full">
+        <main className="min-h-screen flex flex-col items-center bg-white w-full">
 
-            <section className="flex flex-col items-center justify-start min-h-screen w-full bg-white mt-16">
+            {/* HERO SECTION */}
+            <section className="flex flex-col items-center w-full pt-12 md:pt-16">
 
-                {/* header title + date */}
-                <div className="flex flex-col items-center justify-center gap-6 my-20">
+                {/* header */}
+                <div className="flex flex-col items-center gap-4 md:gap-6 my-12 md:my-20 w-11/12 max-w-4xl">
                     <hr className="border border-black w-full" />
-                    <h1 className="text-4xl font-extrabold text-black md:w-3/4 w-full text-center">{blog.title}</h1>
-                    <p className="text-sm text-black text-medium">{blog.date}</p>
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black text-center">
+                        {blog.title}
+                    </h1>
+                    <p className="text-sm text-black">{blog.date}</p>
                     <hr className="border border-black w-full" />
-
                 </div>
 
                 {/* image */}
-
-                <div className="relative w-10/12 h-screen">
-                    <Image src={blog.image} alt={blog.title} fill priority />
+                <div className="relative w-11/12 max-w-5xl h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px]">
+                    <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        fill
+                        priority
+                        className="object-cover"
+                    />
                 </div>
 
-                {/* horizontal line */}
-
-                <hr className="border border-black w-10/12 my-16" />
-
+                <hr className="border border-black w-11/12 max-w-5xl my-12 md:my-16" />
             </section>
 
-            <section className="flex flex-col items-center justify-start min-h-screen w-full bg-white">
+            {/* CONTENT SECTION */}
+            <section className="flex flex-col items-center w-full">
 
-                {/* blog details */}
-                <div className="flex flex-col items-start justify-center gap-8 min-h-screen w-10/12">
+                <div className="flex flex-col gap-6 md:gap-8 w-11/12 max-w-3xl">
 
-                    {/* intro paragraph */}
-                    <p className="text-black text-lg font-normal">
+                    <p className="text-black text-base md:text-lg">
                         {blog.story.intro}
                     </p>
 
-                    {/* sections map paragraphs */}
                     {blog.story.sections.map(({ subtitle, content }) => (
-                        <div key={subtitle} className="space-y-3">
-                            <h1 className="text-black font-bold text-2xl">{subtitle}</h1>
-                            <p className="text-black font-normal text-lg">{content}</p>
+                        <div key={subtitle} className="space-y-2 md:space-y-3">
+                            <h2 className="text-black font-bold text-xl md:text-2xl">
+                                {subtitle}
+                            </h2>
+                            <p className="text-black text-base md:text-lg">
+                                {content}
+                            </p>
                         </div>
                     ))}
 
-                    {/* conclusion paragraph */}
-                    <p className="text-black text-lg font-normal">
+                    <p className="text-black text-base md:text-lg">
                         {blog.story.conclusion}
                     </p>
                 </div>
 
-                {/* newsletter signup */}
-                <NewsletterSignup />
-
+                <div className="mt-16 w-full flex justify-center">
+                    <NewsletterSignup />
+                </div>
             </section>
 
-            {/* see more stories headline */}
-            <SectionHeadline title={"See more stories"} color={"black"} />
+            {/* MORE STORIES */}
+            <SectionHeadline title="See more stories" color="black" />
 
-            <section className="flex flex-col items-center justify-start min-h-screen w-10/12 bg-white mb-20">
+            <section className="flex flex-col items-center w-full mb-16 md:mb-20">
 
+                <div className="mt-12 md:mt-20 w-11/12 max-w-6xl">
 
-
-                {/* other blogs */}
-                <div className="flex flex-col justify-center items-center mt-20">
-                    <div className="grid grid-cols-2 gap-8">
+                    {/* responsive grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
                         {otherBlogs.map(({ slug, title, date, image, excerpt }) => (
-                            <div key={blog.slug}>
-                                <Link href={`/blogs/${slug}`} ><TravelStoryCard title={title} image={image} date={date} story={excerpt} /></Link>
+                            <div key={slug}>
+                                <Link href={`/blogs/${slug}`}>
+                                    <TravelStoryCard
+                                        title={title}
+                                        image={image}
+                                        date={date}
+                                        story={excerpt}
+                                    />
+                                </Link>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* view more */}
-                <ViewMore path={"blogs"} color={"black"} />
-
+                <div className="mt-12">
+                    <ViewMore path="blogs" color="black" />
+                </div>
             </section>
+
         </main>
     );
 

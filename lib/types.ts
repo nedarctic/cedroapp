@@ -10,15 +10,18 @@ export interface Tour {
     excluded: string[];
     activities: string[];
     link: string;
-    heroImage:string;
+    heroImage: string;
     images: string[];
     slug: string;
-    itinerary: {
-        day: string;
-        title: string;
-        activities: string[]
-    }[]
+    itinerary: Itinerary;
 }
+
+export type Itinerary = {
+    day: string;
+    title: string;
+    activities: string[];
+    image: string;
+}[]
 
 export interface Blog {
     slug: string;

@@ -3,16 +3,18 @@ import { SectionHeadline } from "@/components/section-headline";
 import { Search } from "@/components/search";
 import { Filters } from "@/components/filters";
 import { tours } from "@/lib/data";
+import { InputGroupInlineStart } from "@/components/input-group-inline-start";
 
 export default function Tours() {
     return (
-        <main className="flex flex-col justify-center items-center py-24 bg-white/30">
+        <main className="flex flex-col justify-center items-center py-24 bg-white">
 
             {/* page title headline */}
             <SectionHeadline title={"All tours"} color={"black"} />
 
             {/* search component */}
-            <Search placeholder={"Search tours"} />
+            {/* <Search placeholder={"Search tours"} /> */}
+            <InputGroupInlineStart placeholder={"Search tours..."} />
 
             {/* filters */}
             <div className="px-20 mt-20 self-start">
@@ -26,9 +28,9 @@ export default function Tours() {
                         group_size,
                         destination,
                         duration,
-                        images, 
-                        price, 
-                        title, 
+                        images,
+                        price,
+                        title,
                         link
                     }) => (
                         <PopularTourCard
@@ -39,7 +41,7 @@ export default function Tours() {
                             duration={duration}
                             image={images[0]}
                             price={price}
-                            title={title} 
+                            title={title}
                             link={link} />
                     ))}
                 </div>

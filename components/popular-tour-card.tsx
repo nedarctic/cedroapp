@@ -28,11 +28,11 @@ export function PopularTourCard({ title, destination, duration, dates, group_siz
 
                 {/* other details */}
                 <div className="flex flex-col space-y-4 items-start justify-start w-full">
-                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><FaLocationDot size={20} className="mr-2" /> <p className="text-md text-black font-normal">Destination:</p></div><p className="text-gray-600 font-normal text-lg">{destination}</p></div>
-                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><FaRegClock size={20} className="mr-2" /><p className="text-md text-black font-normal">Duration:</p></div><p className="text-gray-600 font-normal text-lg">{duration}</p></div>
-                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><FaCalendarDays size={20} className="mr-2" /><p className="text-md text-black font-normal">Dates:</p></div><p className="text-gray-600 font-normal text-lg">{dates}</p></div>
-                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><HiOutlineUserGroup size={20} className="mr-2" /><p className="text-md text-black font-normal">Group size:</p></div><p className="text-gray-600 font-normal text-lg">{group_size}</p></div>
-                    <div className="flex w-full items-center justify-between border border-black px-4 py-2"><div><p className="text-md text-black font-normal">Price:</p></div><p className="text-gray-600 font-normal text-lg">{price}</p></div>
+                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><FaLocationDot size={20} className="mr-2 text-black" /> <p className="text-md text-black font-normal">Destination:</p></div><p className="text-gray-600 font-normal text-lg">{destination}</p></div>
+                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><FaRegClock size={20} className="mr-2 text-black" /><p className="text-md text-black font-normal">Duration:</p></div><p className="text-gray-600 font-normal text-lg">{duration}</p></div>
+                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><FaCalendarDays size={20} className="mr-2 text-black" /><p className="text-md text-black font-normal">Dates:</p></div><p className="text-gray-600 font-normal text-lg">{dates}</p></div>
+                    <div className="flex w-full items-center justify-between"><div className="flex items-center"><HiOutlineUserGroup size={20} className="mr-2 text-black" /><p className="text-md text-black font-normal">Group size:</p></div><p className="text-gray-600 font-normal text-lg">{group_size}</p></div>
+                    <div className="flex w-full items-center justify-between border border-black px-4 py-2"><div><p className="text-md text-black font-normal">Price:</p></div><p className="text-black font-normal text-lg">{price}</p></div>
                 </div>
 
             </div>

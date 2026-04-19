@@ -4,6 +4,7 @@ import { TravelStoryCard } from "@/components/travel-story-card";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { travelStories } from "@/lib/data";
 import Link from 'next/link';
+import { InputGroupInlineStart } from "@/components/input-group-inline-start";
 
 export default function Blogs() {
     return (
@@ -15,12 +16,12 @@ export default function Blogs() {
                 <SectionHeadline title={"Our travel blog"} color={"black"} />
 
                 {/* search component */}
-                <Search placeholder={"Search blogs"} />
+                <InputGroupInlineStart placeholder="Search blogs..."/>
 
                 {/* grid with travel story cards */}
                 <div className="flex flex-col justify-center items-center mt-20">
                     <div className="grid grid-cols-2 gap-8">
-                        {travelStories.map(({title, image, excerpt, date, slug}) => (
+                        {travelStories.map(({ title, image, excerpt, date, slug }) => (
                             <Link href={`/blogs/${slug}`} ><TravelStoryCard title={title} image={image} date={date} story={excerpt} /></Link>
                         ))}
                     </div>

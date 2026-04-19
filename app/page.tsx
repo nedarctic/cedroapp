@@ -25,7 +25,7 @@ export default function Home() {
       <section id="hero" className="relative flex flex-col w-full items-center justify-center h-screen overflow-hidden">
 
         {/* background gif */}
-        <div className="absolute inset-0 h-11/12">
+        <div className="absolute inset-0 h-full">
           <Image
             src="/gifs/big-cats-hunting-zebra.gif"
             alt="Animals leaping in the savannah Wild"
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         {/* dark overlay */}
-        <div className="absolute h-11/12 inset-0 bg-black/40 z-10" />
+        <div className="absolute h-full inset-0 bg-black/40 z-10" />
 
         {/* landing page main content */}
         <div className="flex flex-col justify-center items-center flex-1 text-center space-y-5 mb-20 z-20">
@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* WHAT WE OFFER SECTION */}
-      <section className="flex flex-col items-center justify-center min-h-screen w-full bg-white/30 py-16">
+      <section className="flex flex-col items-center justify-center min-h-screen w-full bg-white py-16">
 
         {/* intro text */}
         <p className="font-normal text-3xl text-black border border-black py-16 px-32 my-10 w-3/4">
@@ -119,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* POPULAR TOURS SECTION */}
-      <section className="flex flex-col items-center justify-center min-h-screen w-full bg-white/30 py-16">
+      <section className="flex flex-col items-center justify-center min-h-screen w-full bg-white py-16">
 
         {/* intro text */}
         <p className="font-normal text-3xl text-black border border-black py-16 px-32 w-3/4 my-10">

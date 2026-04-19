@@ -75,7 +75,8 @@ export const tours: Tour[] = [
           "Arrival at Maasai Mara and lunch at the camp",
           "Afternoon game drive in the Maasai Mara National Reserve",
           "Dinner and overnight stay at the camp"
-        ]
+        ],
+        image: "/popular-tours/maasai-mara-galore/maasai-mara-galore-1.jpg",
       },
       {
         day: "Day 2",
@@ -86,7 +87,8 @@ export const tours: Tour[] = [
           "Big Five and big cats wildlife viewing",
           "Exploration of savannah grasslands and river ecosystems",
           "Return to camp for dinner and overnight stay"
-        ]
+        ],
+        image: "/popular-tours/maasai-mara-galore/maasai-mara-galore-2.jpg",
       },
       {
         day: "Day 3",
@@ -97,7 +99,8 @@ export const tours: Tour[] = [
           "Lunch and leisure time at the camp",
           "Afternoon game drive",
           "Dinner and overnight stay at the camp"
-        ]
+        ],
+        image: "/popular-tours/maasai-mara-galore/maasai-mara-galore-3.jpg",
       },
       {
         day: "Day 4",
@@ -107,7 +110,8 @@ export const tours: Tour[] = [
           "Check-out and departure from Maasai Mara",
           "Drive back to Nairobi",
           "Drop-off at hotel or airport"
-        ]
+        ],
+        image: "/popular-tours/maasai-mara-galore/maasai-mara-galore-4.jpg",
       }
     ],
     link: "/tours/maasai_mara_safari",
@@ -166,7 +170,8 @@ export const tours: Tour[] = [
           "Arrival and lunch at the safari camp",
           "Afternoon game drive with views of Mount Kilimanjaro",
           "Dinner and overnight stay at the camp"
-        ]
+        ],
+        image: "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-1.jpg",
       },
       {
         day: "Day 2",
@@ -177,7 +182,8 @@ export const tours: Tour[] = [
           "Mid-morning and afternoon game drives",
           "Elephant viewing and wildlife photography",
           "Dinner and overnight stay at the camp"
-        ]
+        ],
+        image: "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-2.jpg",
       },
       {
         day: "Day 3",
@@ -188,7 +194,8 @@ export const tours: Tour[] = [
           "Departure from Amboseli",
           "Drive back to Nairobi",
           "Drop-off at hotel or airport"
-        ]
+        ],
+        image: "/popular-tours/kenya-wildlife-galore/kenya-wildlife-galore-3.jpg",
       }
     ],
     link: "/tours/kenya_wildlife_safari",
@@ -252,7 +259,8 @@ export const tours: Tour[] = [
           "Lunch at the lodge",
           "Afternoon game drive with rhino and flamingo viewing",
           "Dinner and overnight stay at Sarova Lion Hill Game Lodge"
-        ]
+        ],
+        image: "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-1.jpg",
       },
       {
         day: "Day 2",
@@ -263,7 +271,8 @@ export const tours: Tour[] = [
           "Arrival and lunch at the camp",
           "Afternoon game drive in Maasai Mara",
           "Dinner and overnight stay at Sarova Mara Game Camp"
-        ]
+        ],
+        image: "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-2.jpg",
       },
       {
         day: "Day 3",
@@ -274,7 +283,8 @@ export const tours: Tour[] = [
           "Big Five and Great Migration viewing (seasonal)",
           "Wildlife photography opportunities",
           "Return to camp for dinner and overnight stay"
-        ]
+        ],
+        image: "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-3.jpg",
       },
       {
         day: "Day 4",
@@ -285,7 +295,8 @@ export const tours: Tour[] = [
           "Optional hot air balloon safari (extra cost)",
           "Afternoon game drive",
           "Dinner and overnight stay at the camp"
-        ]
+        ],
+        image: "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-4.jpg",
       },
       {
         day: "Day 5",
@@ -296,7 +307,8 @@ export const tours: Tour[] = [
           "Optional cultural visit or nature walk",
           "Evening game drive",
           "Farewell dinner and overnight stay"
-        ]
+        ],
+        image: "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-5.jpg",
       },
       {
         day: "Day 6",
@@ -305,7 +317,8 @@ export const tours: Tour[] = [
           "Breakfast at the camp",
           "Check-out and drive back to Nairobi",
           "Drop-off at hotel or airport"
-        ]
+        ],
+        image: "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-6.jpg",
       }
     ],
     link: "/tours/kenya_luxury_safari",

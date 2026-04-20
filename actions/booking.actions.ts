@@ -1,7 +1,6 @@
 "use server";
 
-import { db } from "@/lib/db";
-import { bookings } from "@/db/schema";
+import { prisma } from "@/lib/prisma";
 import z from "zod";
 import { redirect } from "next/navigation";
 
@@ -10,13 +9,13 @@ export type BookState = {
   error?: string;
 };
 
-// Server action
+
 export async function BookAction(
   tourTitle: string,
   formData: FormData
 ): Promise<BookState> {
 
-  
+
   const BookSchema = z.object({
     name: z.string().min(1, "Name is required"),
     email: z.email({ message: "Valid email is required" }),
@@ -34,11 +33,13 @@ export async function BookAction(
   }
 
   try {
-    await db.insert(bookings).values({
-      name: parsedData.data.name,
-      email: parsedData.data.email,
-      tourTitle: parsedData.data.tourTitle,
-    });
+    await prisma.booking.create({
+      data: {
+        name: parsedData.data.name,
+        email: parsedData.data.email,
+        tourTitle: parsedData.data.tourTitle,
+      }
+    })
 
     return { success: true };
   } catch (error) {

@@ -1,4 +1,4 @@
-import { AccordionMultiple } from "@/components/accordion-multiple";
+import { FaqsAccordion } from "@/components/faqs-accordion";
 import { PopularTourCard } from "@/components/popular-tour-card";
 import { SectionHeadline } from '@/components/section-headline';
 import TimelineComponent from "@/components/timeline-component";
@@ -48,6 +48,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
             <div className="flex flex-col space-y-4 items-center justify-between w-full">
                 <hr className="border border-black w-full " />
                 <h1 className="text-4xl text-black font-bold">{safari.title}</h1>
+                <h1 className="text-2xl text-black font-bold">Details & Itinerary</h1>
                 <hr className="border border-black w-full " />
             </div>
 
@@ -143,7 +144,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                     ))}
                 </div> */}
 
-                <AccordionMultiple />
+                <FaqsAccordion />
 
             </section>
 

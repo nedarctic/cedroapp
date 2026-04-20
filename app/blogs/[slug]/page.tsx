@@ -107,7 +107,7 @@ export default async function BlogDetails({ params }: { params: Promise<{ slug: 
                     </div>
                 </div>
 
-                <div className="mt-12">
+                <div className="w-11/12 mt-12">
                     <ViewMore path="blogs" color="black" />
                 </div>
             </section>

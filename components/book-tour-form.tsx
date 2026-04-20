@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { BookAction, BookState } from "@/actions/BookAction";
+import { BookAction, BookState } from "@/actions/booking.actions";
 import { useRouter } from "next/navigation";
 
 export function BookTourForm({ tourTitle }: { tourTitle: string }) {
@@ -35,6 +35,7 @@ export function BookTourForm({ tourTitle }: { tourTitle: string }) {
                 <input
                     type="text"
                     name="name"
+                    placeholder="e.g. John Doe"
                     className="border border-black p-4 text-black outline-none"
                     required
                 />
@@ -45,6 +46,7 @@ export function BookTourForm({ tourTitle }: { tourTitle: string }) {
                 <input
                     type="email"
                     name="email"
+                    placeholder="e.g. email@email.com"
                     className="border border-black p-4 text-black outline-none"
                     required
                 />

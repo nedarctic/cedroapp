@@ -498,3 +498,30 @@ export const faqs = [
       "Safaris run year-round, but the best time depends on what you want to experience. Our team will advise you based on wildlife movements, weather conditions, and your travel goals."
   }
 ];
+
+export const testimonials = [
+  {
+    image_right: true,
+    image: "/client-testimonials/client1.jpg",
+    name: "Melinda P.",
+    testimonial:
+      "Cedro Adventures made my holiday! The trip to Maasai Mara and Amboseli were truly life changing for me. The itinerary was so well put together and the general service from the experts from Cedro Adventures was one of the best.",
+    country: "USA",
+  },
+  {
+    image_right: false,
+    image: "/client-testimonials/client2.jpg",
+    name: "Selina W.",
+    testimonial:
+      "Cedro Adventures are the best! What I loved most was their attention to detail in their service. The itinierary was great, I personally recommend Kenya Luxury Safari, which entails a safari to the Maasai Mara and Lake Nakuru, a total experience!",
+    country: "France",
+  },
+  {
+    image_right: true,
+    image: "/client-testimonials/client3.jpg",
+    name: "Jack H.",
+    testimonial:
+      "I highly recommend travelling with Cedro Adventures. They are highly professional and take their service seriously. Trust me, coming from a poor tour agency safari experience, Cedro Adventures were such a breather. I don't know why I hadn't already heard of them.",
+    country: "Canada",
+  },
+];

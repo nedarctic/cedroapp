@@ -15,7 +15,8 @@ import { ViewMore } from "@/components/view-more";
 import { PopularTourCard } from "@/components/popular-tour-card";
 import { ClientTestimonialCard } from "@/components/client-testimonial-card";
 import { TravelStoryCard } from "@/components/travel-story-card";
-import { travelStories } from '@/lib/data'
+import { travelStories, testimonials } from '@/lib/data'
+import { CarouselTestimonial } from "@/components/carousel-testimonials";
 
 export default function Home() {
   return (
@@ -153,9 +154,9 @@ export default function Home() {
         {/* carousel with travel story cards */}
 
         <div className="flex flex-col space-y-8">
-          <ClientTestimonialCard image_right={true} image={"/client-testimonials/client1.jpg"} name={"Melinda P."} testimonial={"Cedro Adventures made my holiday! The trip to Maasai Mara and Amboseli were truly life changing for me. The itinerary was so well put together and the general service from the experts from Cedro Adventures was one of the best."} country={"USA"} />
-          <ClientTestimonialCard image_right={false} image={"/client-testimonials/client2.jpg"} name={"Selina W."} testimonial={"Cedro Adventures are the best! What I loved most was their attention to detail in their service. The itinierary was great, I personally recommend Kenya Luxury Safari, which entails a safari to the Maasai Mara and Lake Nakuru, a total experience!"} country={"France"} />
-          <ClientTestimonialCard image_right={true} image={"/client-testimonials/client3.jpg"} name={"Jack H."} testimonial={"I highly recommend travelling with Cedro Adventures. They are highly professional and take their service seriously. Trust me, coming from a poor tour agency safari experience, Cedro Adventures were such a breather. I don't know why I hadn't already heard of them."} country={"Canada"} />
+
+          <CarouselTestimonial />
+
         </div>
 
       </section>

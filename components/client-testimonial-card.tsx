@@ -3,7 +3,7 @@ import { Stars } from '@/components/stars';
 
 export function ClientTestimonialCard ({name, testimonial, country, image, image_right}: {name: string; image: string; testimonial: string; country: string; image_right: boolean}) {
     return (
-        <div className="w-200 h-100 flex items-center justify-center border-2 border-white">
+        <div className="w-full h-100 flex items-center justify-center border-2 border-white">
 
             {/* image right */}
 

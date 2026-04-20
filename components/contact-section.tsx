@@ -22,7 +22,10 @@ export const ContactSection = () => {
   const [state, formAction, pending] = useActionState(ContactAction, initialState);
 
   useEffect(() => {
-    setOpen(true)
+    setOpen(true);
+    setEmail('');
+    setName('');
+    setMessage('');
   }, [state.success]);
 
   return (
@@ -133,7 +136,7 @@ export const ContactSection = () => {
                 </button>
               </div>
 
-              {state.success && <StatusDialog open={open} onOpenChange={setOpen} />}
+              {state.success && <StatusDialog open={open} onOpenChange={setOpen} message="Message sent successfully" error={false} />}
 
               {state.error && <p className="text-red-600 text-md font-medium mt-4">Error sending message. Check connection and try again.</p>}
             </form>

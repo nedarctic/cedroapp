@@ -1,13 +1,20 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import { BookAction, BookState } from "@/actions/booking.actions";
 import { useRouter } from "next/navigation";
+import { StatusDialog } from "./status-dialog";
 
 export function BookTourForm({ tourTitle }: { tourTitle: string }) {
     const router = useRouter();
     const [state, setState] = useState<BookState>({ success: false, error: undefined });
     const [isPending, startTransition] = useTransition();
+
+    const [open, setOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+        setOpen(true)
+    }, [state.success]);
 
     const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -60,8 +67,8 @@ export function BookTourForm({ tourTitle }: { tourTitle: string }) {
             </button>
 
             {/* Feedback messages */}
-            {state.error && <p className="text-red-600">{state.error}</p>}
-            {state.success && <p className="text-green-600">Booking successful!</p>}
+            {state.error && <StatusDialog message="An error occurred. Check your connection and try again." error={true} open={open} onOpenChange={setOpen} />}
+            {state.success && <StatusDialog message="Booking successful!" error={false} open={open} onOpenChange={setOpen} />}
         </form>
     );
 }

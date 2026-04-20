@@ -8,12 +8,25 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group"
+import React from "react";
 
-export function InputGroupInlineStart({placeholder}: {placeholder: string}) {
+type SearchInputType = {
+  placeholder: string;
+  onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  name: string;
+};
+
+export function InputGroupInlineStart({
+  placeholder,
+  onChangeHandler,
+  value,
+  name
+}: SearchInputType) {
   return (
-    <Field className="max-w-sm">
+    <Field className="w-full">
       <InputGroup>
-        <InputGroupInput id="inline-start-input" placeholder={placeholder} />
+        <InputGroupInput onChange={onChangeHandler} id="inline-start-input" placeholder={placeholder} value={value} name={name} />
         <InputGroupAddon align="inline-start">
           <SearchIcon className="text-muted-foreground" />
         </InputGroupAddon>

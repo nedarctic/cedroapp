@@ -2,6 +2,7 @@ import { FaqsAccordion } from "@/components/faqs-accordion";
 import { SectionHeadline } from "@/components/section-headline";
 import { ContactSection } from "@/components/contact-section";
 import { ContactMap } from "@/components/contact-map"
+import { NewsletterSignup } from "@/components/newsletter-signup";
 
 export default function Contact() {
     return (
@@ -26,6 +27,8 @@ export default function Contact() {
                 <SectionHeadline title="Frequently Asked Questions" color="black" />
 
                 <FaqsAccordion />
+
+                <NewsletterSignup />
 
             </section>
         </main>

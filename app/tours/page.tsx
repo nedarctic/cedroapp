@@ -1,11 +1,14 @@
-import { PopularTourCard } from "@/components/popular-tour-card";
-import { SectionHeadline } from "@/components/section-headline";
-import { Search } from "@/components/search";
 import { Filters } from "@/components/filters";
-import { tours } from "@/lib/data";
-import { InputGroupInlineStart } from "@/components/input-group-inline-start";
+import { PopularTourCard } from "@/components/popular-tour-card";
+import { SearchTours } from "@/components/search-tours";
+import { SectionHeadline } from "@/components/section-headline";
+import { getTours } from "@/lib/helpers";
 
-export default function Tours() {
+export default async function Tours({ searchParams }: { searchParams: Promise<{ query: string; filter: string }> }) {
+
+    const { query } = await searchParams;
+    const tours = await getTours(query);
+
     return (
         <main className="flex flex-col justify-center items-center py-24 bg-white">
 
@@ -14,7 +17,7 @@ export default function Tours() {
 
             {/* search component */}
             {/* <Search placeholder={"Search tours"} /> */}
-            <InputGroupInlineStart placeholder={"Search tours..."} />
+            <SearchTours />
 
             {/* filters */}
             <div className="px-20 mt-20 self-start">
@@ -23,7 +26,7 @@ export default function Tours() {
 
             {/* grid containing tour cards */}
             <div className="flex flex-col justify-center items-center mt-20">
-                <div className="grid grid-cols-2 gap-10">
+                {tours.length > 0 ? <div className="grid grid-cols-2 gap-10">
                     {tours.map(({ dates,
                         group_size,
                         destination,
@@ -45,6 +48,7 @@ export default function Tours() {
                             link={link} />
                     ))}
                 </div>
+                : <p className="font-bold text-black text-md">No tours match your query.</p>}
             </div>
         </main>
     );

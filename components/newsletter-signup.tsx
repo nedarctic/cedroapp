@@ -1,7 +1,8 @@
 "use client"
 
 import { SubscriptionAction } from "@/actions/subscription.actions";
-import { useState, useActionState } from "react";
+import { useState, useActionState, useEffect } from "react";
+import { StatusDialog } from "./status-dialog";
 
 export function NewsletterSignup() {
 
@@ -13,6 +14,12 @@ export function NewsletterSignup() {
     };
 
     const [state, formAction, pending] = useActionState(SubscriptionAction, prevState)
+
+    const [open, setOpen] = useState<boolean>(false);
+
+    useEffect(() => {
+        setOpen(true)
+    }, [state.success])
     
     return (
         <div className="flex flex-col justify-center items-center my-40">
@@ -28,8 +35,8 @@ export function NewsletterSignup() {
 
                 <button className="px-4 py-2 text-black bg-[#FAD039]">{pending ? "Signing up..." : "Sign up"}</button>
             </form>
-            {state.error?.includes("Unique constraint failed") && <p className="text-red-600 text-sm font-normal mt-4">Email already subscribed</p>}
-            {state.success && <p className="text-green-600 text-sm font-normal mt-4">Email successfully subscribed!</p>}
+            {state.error?.includes("Unique constraint failed") && <StatusDialog message="Email already subscribed" error={true} open={open} onOpenChange={setOpen} />}
+            {state.success && <StatusDialog message="Email successfully subscribed!" error={false} open={open} onOpenChange={setOpen} />}
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import { travelStories, tours } from "./data";
+import { travelStories, tours, destination_items } from "./data";
 import type { Blog } from "./types";
 
 export async function getBlog(slug: string): Promise<Blog | null> {
@@ -59,4 +59,18 @@ export async function getTours(query: string) {
 
         return (matchTitle || matchDestination)
     });
+}
+
+export function getDestinationData(destination: string) {
+    const lowerDestination = destination.toLowerCase();
+
+    const destinationTours = tours.filter(tour => {
+        return tour.destination.toLowerCase().includes(lowerDestination);
+    })
+
+    const destinationGuide = destination_items.find(d =>
+        d.label.toLowerCase().includes(lowerDestination)
+    )?.guide || [];
+
+    return { destinationTours, length: destinationTours.length, destinationGuide }
 }

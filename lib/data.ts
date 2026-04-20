@@ -1,11 +1,123 @@
 import { PiFacebookLogoLight, PiWhatsappLogoLight, PiInstagramLogoLight, PiLinkedinLogoLight } from "react-icons/pi";
 import { Tour, Blog } from "@/lib/types";
 
+const kenyaGuide = [
+  {
+    subtitle: "Introduction",
+    content: "Welcome to Kenya, a land of breathtaking landscapes, diverse wildlife, and rich cultural heritage. From the vibrant streets of Nairobi to the sweeping savannahs of the Maasai Mara and the pristine beaches along the Indian Ocean, Kenya offers unforgettable experiences waiting to be discovered. Here's a glimpse into what this remarkable country has to offer:"
+  },
+  {
+    subtitle: "Nairobi - The Green City in the Sun",
+    content: "Begin your journey in Nairobi, Kenya’s dynamic capital where urban life meets nature. Visit Nairobi National Park, the only national park within a capital city, and see lions, giraffes, and rhinos against a city skyline. Explore the David Sheldrick Wildlife Trust to learn about elephant conservation, and get up close with giraffes at the Giraffe Centre. Discover Kenyan history at the National Museum and enjoy local cuisine at vibrant restaurants and markets."
+  },
+  {
+    subtitle: "Maasai Mara - Wildlife Paradise",
+    content: "Head to the Maasai Mara National Reserve, one of Africa’s most famous safari destinations. Witness the incredible Great Migration, where millions of wildebeest and zebras cross the plains. Spot the Big Five—lion, elephant, buffalo, leopard, and rhino—on thrilling game drives. Experience Maasai culture by visiting a traditional village and enjoy breathtaking sunsets over the savannah."
+  },
+  {
+    subtitle: "Diani Beach - Coastal Escape",
+    content: "Relax along the white sands of Diani Beach, one of Africa’s most beautiful الساحلية destinations. Swim in crystal-clear waters, snorkel among coral reefs, or try water sports like kitesurfing. Enjoy fresh seafood, explore nearby forests, or take a dhow cruise along the coast for a tranquil sunset experience."
+  },
+  {
+    subtitle: "Mount Kenya - Adventure in the Highlands",
+    content: "Venture to Mount Kenya, Africa’s second-highest peak and a UNESCO World Heritage Site. Trek through diverse ecosystems ranging from lush forests to alpine meadows and glaciers. Whether you aim to summit Point Lenana or simply enjoy scenic hikes, the mountain offers a rewarding adventure for nature lovers and climbers alike."
+  },
+  {
+    subtitle: "Lake Nakuru - Flamingo Haven",
+    content: "Visit Lake Nakuru National Park, famous for its flocks of flamingos that create a pink fringe along the lake’s shores. The park is also a sanctuary for endangered rhinos and home to lions, leopards, and giraffes. Enjoy scenic viewpoints overlooking the lake and explore the surrounding woodlands and waterfalls."
+  },
+  {
+    subtitle: "Lamu Island - Swahili Heritage",
+    content: "Step back in time on Lamu Island, a UNESCO World Heritage Site known for its well-preserved Swahili culture and architecture. Wander through narrow alleyways, ride donkeys instead of cars, and admire intricately carved wooden doors. Relax on quiet beaches and experience traditional dhow sailing along the Indian Ocean."
+  }
+];
+
+const zanzibarGuide = [
+  {
+    subtitle: "Introduction",
+    content: "Welcome to Zanzibar, a tropical paradise off the coast of Tanzania known for its white sandy beaches, turquoise waters, and rich cultural heritage. This island offers a perfect mix of relaxation, history, and adventure."
+  },
+  {
+    subtitle: "Stone Town - Cultural Heart",
+    content: "Begin in Stone Town, a UNESCO World Heritage Site filled with narrow streets, historic buildings, and bustling markets. Visit the House of Wonders, the Old Fort, and learn about the island’s Swahili and Arab heritage."
+  },
+  {
+    subtitle: "Nungwi & Kendwa - Beach Bliss",
+    content: "Head north to Nungwi and Kendwa beaches for crystal-clear waters and stunning sunsets. These beaches are perfect for swimming, sunbathing, and enjoying vibrant nightlife."
+  },
+  {
+    subtitle: "Prison Island - Giant Tortoises",
+    content: "Take a short boat trip to Prison Island, home to giant Aldabra tortoises. Enjoy snorkeling in clear waters and relax on the island’s quiet beaches."
+  },
+  {
+    subtitle: "Jozani Forest - Red Colobus Monkeys",
+    content: "Visit Jozani Forest to see the rare red colobus monkeys unique to Zanzibar. Walk through lush forest trails and mangrove ecosystems."
+  },
+  {
+    subtitle: "Spice Tours - Island Flavors",
+    content: "Discover why Zanzibar is called the Spice Island. Tour local farms and learn about cloves, nutmeg, cinnamon, and other spices while tasting fresh tropical fruits."
+  }
+];
+
+const rwandaGuide = [
+  {
+    subtitle: "Introduction",
+    content: "Welcome to Rwanda, the Land of a Thousand Hills, known for its stunning landscapes, rich culture, and remarkable wildlife experiences. From misty mountains to vibrant cities and serene lakes, Rwanda offers a unique blend of adventure and tranquility."
+  },
+  {
+    subtitle: "Kigali - Clean and Modern Capital",
+    content: "Start your journey in Kigali, one of Africa’s cleanest and safest cities. Visit the Kigali Genocide Memorial for a powerful historical experience, explore local markets, and enjoy a growing food scene with both traditional and international cuisine."
+  },
+  {
+    subtitle: "Volcanoes National Park - Gorilla Trekking",
+    content: "Experience one of the world’s most unforgettable wildlife encounters by trekking to see mountain gorillas in Volcanoes National Park. Hike through lush forests and observe these gentle giants in their natural habitat."
+  },
+  {
+    subtitle: "Lake Kivu - Relaxation by the Water",
+    content: "Unwind along the shores of Lake Kivu, one of Africa’s Great Lakes. Enjoy kayaking, boat rides, or simply relax by the beach in towns like Gisenyi and Kibuye with stunning sunset views."
+  },
+  {
+    subtitle: "Nyungwe Forest - Canopy Walk Adventure",
+    content: "Explore Nyungwe Forest National Park, home to diverse primates and bird species. Walk along the famous canopy bridge suspended high above the forest and discover scenic hiking trails."
+  },
+  {
+    subtitle: "Akagera National Park - Big Five Safari",
+    content: "Visit Akagera National Park for a classic safari experience. Spot lions, elephants, rhinos, and more while enjoying game drives and boat safaris along Lake Ihema."
+  }
+];
+
+const tanzaniaGuide = [
+  {
+    subtitle: "Introduction",
+    content: "Welcome to Tanzania, a land of vast wilderness, iconic wildlife, and natural wonders. From the Serengeti plains to Mount Kilimanjaro and the beaches of Zanzibar, Tanzania offers diverse and unforgettable experiences."
+  },
+  {
+    subtitle: "Serengeti National Park - The Great Migration",
+    content: "Explore the Serengeti, one of the world’s most famous safari destinations. Witness the Great Migration, where millions of wildebeest and zebras move across the plains, and spot predators like lions and cheetahs."
+  },
+  {
+    subtitle: "Mount Kilimanjaro - Africa’s Highest Peak",
+    content: "Challenge yourself by climbing Mount Kilimanjaro, the tallest mountain in Africa. Trek through different climate zones to reach the summit and enjoy breathtaking views."
+  },
+  {
+    subtitle: "Ngorongoro Crater - Natural Wonder",
+    content: "Visit the Ngorongoro Crater, a UNESCO World Heritage Site and one of the best places to see the Big Five. The crater’s unique ecosystem supports a high density of wildlife."
+  },
+  {
+    subtitle: "Zanzibar - Island Escape",
+    content: "Combine your safari with a visit to Zanzibar’s beautiful beaches. Relax by the ocean, explore historic Stone Town, and enjoy the island’s culture and cuisine."
+  },
+  {
+    subtitle: "Tarangire National Park - Elephant Haven",
+    content: "Discover Tarangire National Park, famous for its large elephant herds and ancient baobab trees. Enjoy quieter game drives and diverse wildlife viewing."
+  }
+];
+
 export const destination_items = [
-  { label: 'Kenya', href: '/destinations/kenya' },
-  { label: 'Tanzania', href: '/destinations/tanzania' },
-  { label: 'Zanzibar', href: '/destinations/zanzibar' },
-  { label: 'Rwanda', href: '/destinations/rwanda' },
+  { label: 'Kenya', href: '/destinations/kenya', image: "/popular-destinations/kenya.jpg", guide: kenyaGuide },
+  { label: 'Tanzania', href: '/destinations/tanzania', image: "/popular-destinations/tanzania.jpg", guide: tanzaniaGuide },
+  { label: 'Zanzibar', href: '/destinations/zanzibar', image: "/popular-destinations/zanzibar.jpg", guide: zanzibarGuide },
+  { label: 'Rwanda', href: '/destinations/rwanda', image: "/popular-destinations/rwanda.jpg", guide: rwandaGuide },
 ];
 
 export const utility_items = [
@@ -32,7 +144,6 @@ export const social_items = [
 export const email = { label: "info@cedroadventures.com", href: "mailto:info@cedroadventures.com" };
 export const phone = { label: "(+254) 721 174 008", href: "callto:0721234567" };
 
-// tour details
 export const tours: Tour[] = [
   {
     destination: "Kenya",
@@ -333,6 +444,265 @@ export const tours: Tour[] = [
       "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-6.jpg",
       "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-7.jpg",
       "/popular-tours/kenya-luxury-galore/kenya-luxury-galore-8.jpg",
+    ],
+  },
+  {
+    destination: "Rwanda",
+    dates: "Anytime",
+    duration: "3 Days / 2 Nights",
+    group_size: "Max 12 People",
+    price: "From: USD $2,150.00",
+    title: "3-Day Rwanda Gorilla Trekking Experience",
+    intro: "Embark on a once-in-a-lifetime journey into the misty mountains of Rwanda. This short but powerful adventure brings you face-to-face with endangered mountain gorillas, combined with rich culture and breathtaking scenery in the Land of a Thousand Hills.",
+    included: [
+      "3 days / 2 nights Rwanda safari",
+      "Gorilla trekking permit",
+      "Transport from Kigali to Volcanoes National Park and back",
+      "Professional English-speaking guide/driver",
+      "2 nights’ accommodation near Volcanoes National Park",
+      "All meals during the safari",
+      "Guided forest trekking experience"
+    ],
+    excluded: [
+      "International flights",
+      "Visa fees and travel insurance",
+      "Personal expenses (tips, drinks, souvenirs)",
+      "Optional activities not listed",
+      "Anything not explicitly mentioned"
+    ],
+    activities: [
+      "Gorilla trekking in Volcanoes National Park",
+      "Scenic drives through Rwanda’s hills",
+      "Cultural visits to local communities",
+      "Nature walks and photography",
+      "City exploration in Kigali"
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Kigali to Volcanoes National Park",
+        activities: [
+          "Arrival and pick-up in Kigali",
+          "City tour including Kigali Genocide Memorial",
+          "Drive to Volcanoes National Park",
+          "Check-in and dinner at lodge"
+        ],
+        image: "/popular-tours/rwanda-gorilla/rwanda-1.jpg",
+      },
+      {
+        day: "Day 2",
+        title: "Gorilla Trekking Experience",
+        activities: [
+          "Early breakfast and briefing",
+          "Guided gorilla trekking in the forest",
+          "Observe mountain gorillas in their habitat",
+          "Return to lodge for relaxation and dinner"
+        ],
+        image: "/popular-tours/rwanda-gorilla/rwanda-2.jpg",
+      },
+      {
+        day: "Day 3",
+        title: "Return to Kigali",
+        activities: [
+          "Breakfast at the lodge",
+          "Optional cultural village visit",
+          "Drive back to Kigali",
+          "Drop-off at airport or hotel"
+        ],
+        image: "/popular-tours/rwanda-gorilla/rwanda-3.jpg",
+      }
+    ],
+    link: "/tours/rwanda_gorilla_trekking",
+    heroImage: "/popular-tours/rwanda.jpg",
+    slug: "rwanda_gorilla_trekking",
+    images: [
+      "/popular-tours/rwanda-gorilla/rwanda-1.jpg",
+      "/popular-tours/rwanda-gorilla/rwanda-2.jpg",
+      "/popular-tours/rwanda-gorilla/rwanda-3.jpg",
+      "/popular-tours/rwanda-gorilla/rwanda-4.jpg",
+    ],
+  },
+  {
+    destination: "Tanzania",
+    dates: "Anytime",
+    duration: "5 Days / 4 Nights",
+    group_size: "Max 16 People",
+    price: "From: USD $2,480.00",
+    title: "5-Day Serengeti & Ngorongoro Safari",
+    intro: "Discover Tanzania’s legendary wildlife destinations on this immersive safari through the Serengeti and Ngorongoro Crater. Experience vast plains, incredible wildlife encounters, and some of Africa’s most iconic landscapes.",
+    included: [
+      "5 days / 4 nights Tanzania safari",
+      "Transport in a 4x4 safari vehicle",
+      "Professional safari guide/driver",
+      "Game drives in Serengeti and Ngorongoro",
+      "Accommodation in safari lodges/camps",
+      "All meals during the safari",
+      "Park entry fees"
+    ],
+    excluded: [
+      "International flights",
+      "Visa fees and travel insurance",
+      "Personal expenses",
+      "Tips and gratuities",
+      "Optional activities not listed"
+    ],
+    activities: [
+      "Game drives in Serengeti National Park",
+      "Wildlife viewing in Ngorongoro Crater",
+      "Big Five safari experience",
+      "Scenic photography",
+      "Birdwatching"
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arusha to Serengeti",
+        activities: [
+          "Pick-up from Arusha",
+          "Drive to Serengeti",
+          "Afternoon game drive",
+          "Dinner and overnight stay"
+        ],
+        image: "/popular-tours/tanzania-safari/tanzania-1.jpg",
+      },
+      {
+        day: "Day 2",
+        title: "Full-Day Serengeti Safari",
+        activities: [
+          "Early morning game drive",
+          "Full-day wildlife exploration",
+          "Picnic lunch in the park",
+          "Dinner and overnight stay"
+        ],
+        image: "/popular-tours/tanzania-safari/tanzania-2.jpg",
+      },
+      {
+        day: "Day 3",
+        title: "Serengeti Exploration",
+        activities: [
+          "Morning game drive",
+          "Leisure time at camp",
+          "Afternoon safari drive",
+          "Dinner and overnight stay"
+        ],
+        image: "/popular-tours/tanzania-safari/tanzania-3.jpg",
+      },
+      {
+        day: "Day 4",
+        title: "Ngorongoro Crater",
+        activities: [
+          "Drive to Ngorongoro",
+          "Crater game drive",
+          "Wildlife viewing",
+          "Dinner and overnight stay"
+        ],
+        image: "/popular-tours/tanzania-safari/tanzania-4.jpg",
+      },
+      {
+        day: "Day 5",
+        title: "Return to Arusha",
+        activities: [
+          "Breakfast at lodge",
+          "Drive back to Arusha",
+          "Drop-off at hotel or airport"
+        ],
+        image: "/popular-tours/tanzania-safari/tanzania-5.jpg",
+      }
+    ],
+    link: "/tours/tanzania_safari",
+    heroImage: "/popular-tours/tanzania.jpg",
+    slug: "tanzania_safari",
+    images: [
+      "/popular-tours/tanzania-safari/tanzania-1.jpg",
+      "/popular-tours/tanzania-safari/tanzania-2.jpg",
+      "/popular-tours/tanzania-safari/tanzania-3.jpg",
+      "/popular-tours/tanzania-safari/tanzania-4.jpg",
+      "/popular-tours/tanzania-safari/tanzania-5.jpg",
+    ],
+  },
+  {
+    destination: "Zanzibar",
+    dates: "Anytime",
+    duration: "4 Days / 3 Nights",
+    group_size: "Max 14 People",
+    price: "From: USD $980.00",
+    title: "4-Day Zanzibar Beach & Culture Escape",
+    intro: "Escape to the tropical paradise of Zanzibar, where turquoise waters, white sandy beaches, and rich Swahili culture create the perfect island getaway. Relax, explore, and indulge in this unforgettable coastal experience.",
+    included: [
+      "4 days / 3 nights Zanzibar stay",
+      "Airport transfers",
+      "Accommodation in beach resort",
+      "Daily breakfast",
+      "Stone Town guided tour",
+      "Spice farm tour",
+    ],
+    excluded: [
+      "Flights to/from Zanzibar",
+      "Visa fees and travel insurance",
+      "Personal expenses",
+      "Optional excursions",
+      "Meals not mentioned"
+    ],
+    activities: [
+      "Relaxing on white sandy beaches",
+      "Stone Town cultural tour",
+      "Spice farm experience",
+      "Snorkeling and ocean activities",
+      "Sunset dhow cruise (optional)"
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arrival in Zanzibar",
+        activities: [
+          "Arrival at Zanzibar Airport",
+          "Transfer to beach resort",
+          "Check-in and relaxation",
+          "Dinner and overnight stay"
+        ],
+        image: "/popular-tours/zanzibar/zanzibar-1.jpg",
+      },
+      {
+        day: "Day 2",
+        title: "Stone Town & Spice Tour",
+        activities: [
+          "Breakfast at the hotel",
+          "Guided Stone Town tour",
+          "Visit spice plantations",
+          "Return to hotel for relaxation"
+        ],
+        image: "/popular-tours/zanzibar/zanzibar-2.jpg",
+      },
+      {
+        day: "Day 3",
+        title: "Beach & Ocean Activities",
+        activities: [
+          "Free day at the beach",
+          "Optional snorkeling or dhow cruise",
+          "Relaxation and leisure",
+          "Dinner and overnight stay"
+        ],
+        image: "/popular-tours/zanzibar/zanzibar-3.jpg",
+      },
+      {
+        day: "Day 4",
+        title: "Departure",
+        activities: [
+          "Breakfast at the hotel",
+          "Check-out",
+          "Transfer to airport"
+        ],
+        image: "/popular-tours/zanzibar/zanzibar-4.jpg",
+      }
+    ],
+    link: "/tours/zanzibar_escape",
+    heroImage: "/popular-tours/zanzibar.jpg",
+    slug: "zanzibar_escape",
+    images: [
+      "/popular-tours/zanzibar/zanzibar-1.jpg",
+      "/popular-tours/zanzibar/zanzibar-2.jpg",
+      "/popular-tours/zanzibar/zanzibar-3.jpg",
+      "/popular-tours/zanzibar/zanzibar-4.jpg",
     ],
   },
 ]

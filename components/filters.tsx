@@ -10,9 +10,8 @@ export function Filters({ filters }: { filters: string[] }) {
     const searchParams = useSearchParams();
     const initialFilter = searchParams.get("filter") || "";
     const [filter, setFilter] = useState<string>(initialFilter);
-    const debounceTime = 500;
 
-    
+
     useEffect(() => {
 
         const params = new URLSearchParams(searchParams.toString());
@@ -36,10 +35,24 @@ export function Filters({ filters }: { filters: string[] }) {
 
     return (
         <div className="flex items-center space-x-6">
-            <button className="border border-black text-black p-4">All Tours</button>
+            <button
+                onClick={() => setFilter("")}
+                className={`p-4 ${filter === "" ? "border border-black" : ""
+                    }`}
+            >
+                All Tours
+            </button>
+
             <ul className="flex items-center space-x-6">
-                {filters.map((filter, index) => (
-                    <button onClick={() => handleClick(filter)} value={filter} key={index} className="text-lg text-black font-normal">{filter}</button>
+                {filters.map((f, index) => (
+                    <button
+                        key={index}
+                        onClick={() => handleClick(f)}
+                        className={`text-lg font-normal p-2 ${filter === f ? "border border-black" : ""
+                            }`}
+                    >
+                        {f}
+                    </button>
                 ))}
             </ul>
         </div>

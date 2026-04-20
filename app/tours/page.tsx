@@ -48,7 +48,7 @@ export default async function Tours({ searchParams }: { searchParams: Promise<{ 
                             link={link} />
                     ))}
                 </div>
-                : <p className="font-bold text-black text-md">No tours match your query.</p>}
+                    : <p className="font-bold text-black text-md">No tours match your query.</p>}
             </div>
         </main>
     );

@@ -141,7 +141,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
             </div>
 
             {/* Itinerary Section */}
-            <section className="w-full max-w-7xl flex flex-col items-center bg-white pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6">
+            <section className="w-full flex flex-col items-center bg-white pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-24">
                 <div className="flex flex-col items-start w-full mb-4 sm:mb-6">
                     <h1 className="text-black text-xl sm:text-2xl font-bold my-3 self-start">Itinerary</h1>
                 </div>

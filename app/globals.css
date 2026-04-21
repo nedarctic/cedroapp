@@ -155,9 +155,6 @@
     animation: slideIn 0.3s ease-out;
 }
 
-
-/* For tablets, you can adjust the floating menu position */
-
 @media (min-width: 640px) and (max-width: 768px) {
     .animate-slideIn {
         animation: slideIn 0.3s ease-out;

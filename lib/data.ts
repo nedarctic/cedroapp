@@ -826,11 +826,11 @@ export const teamMembers = [
       "Emmanuel drives Cedro Adventures' digital presence, crafting engaging content and marketing strategies that connect travelers with inspiring destinations and unforgettable experiences."
   },
   {
-    image: "/team/tabitha.jpg",
-    name: "Tabitha Chebet",
-    designation: "Tour Consultant",
+    image: "/team/jennifer.jpg",
+    name: "Jennifer Bor",
+    designation: "Tour Coordinator",
     description:
-      "Tabitha works closely with travelers to design personalized tour experiences, offering expert guidance, local insight, and attentive support to ensure every journey is seamless and memorable."
+      "Jennifer coordinates tour logistics with precision, ensuring every itinerary runs smoothly from start to finish. She works closely with guides, partners, and clients to deliver well-organized, seamless travel experiences that meet the highest standards of service."
   },
   {
     image: "/team/justus.jpg",

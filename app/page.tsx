@@ -104,7 +104,7 @@ export default function Home() {
       <section className="flex flex-col items-center w-full bg-white py-12 sm:py-16 lg:py-20">
 
         {/* intro text */}
-        <p className="font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-black border border-black py-8 sm:py-10 px-6 sm:px-10 lg:px-16 my-8 sm:my-10 max-w-4xl text-center">
+        <p className="w-11/12 font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-black border border-black py-8 sm:py-10 px-6 sm:px-10 lg:px-16 my-8 sm:my-10 max-w-4xl text-center">
           At Cedro Adventures, we believe that travel is more than just visiting new places, it's about embarking on transformative journeys, creating lasting memories, and forging meaningful connections with the world around us.
         </p>
 

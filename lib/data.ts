@@ -830,7 +830,7 @@ export const teamMembers = [
     name: "Jennifer Bor",
     designation: "Tour Coordinator",
     description:
-      "Jennifer coordinates tour logistics with precision, ensuring every itinerary runs smoothly from start to finish. She works closely with guides, partners, and clients to deliver well-organized, seamless travel experiences that meet the highest standards of service."
+      "Jennifer coordinates tour logistics, ensuring every itinerary runs smoothly while delivering seamless and well-organized travel experiences."
   },
   {
     image: "/team/justus.jpg",

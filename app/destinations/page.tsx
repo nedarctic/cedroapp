@@ -19,7 +19,7 @@ export default function Destinations () {
                 {/* grid with popular destination cards */}
                 <div className="flex flex-col justify-center items-center">
                     <div className="grid grid-cols-2 gap-8 w-full">
-                        {destination_items.map(({label, href, image}) => <Link href={href}><PopularDestinationCard key={image} image={image} destination={label} tours={getDestinationData(label).length} /></Link>)}
+                        {destination_items.map(({label, href, image}) => <Link key={image} href={href}><PopularDestinationCard image={image} destination={label} tours={getDestinationData(label).length} /></Link>)}
                     </div>
 
                     {/* horizontal line & view all destinations button  */}

@@ -79,7 +79,7 @@ export default async function DestinationDetails({ params }: { params: Promise<{
                     {destinationGuide.map(({ subtitle, content }, index) => (
                         <div 
                             key={subtitle} 
-                            className="space-y-2 sm:space-y-3 md:space-y-4 border-l-4 border-yellow-400 pl-3 sm:pl-4 md:pl-5"
+                            className="space-y-2 sm:space-y-3 md:space-y-4"
                         >
                             <h2 className="text-black font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl">
                                 {subtitle}

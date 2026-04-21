@@ -97,7 +97,7 @@ export default function Footer() {
                         </div>
 
                         {/* utility */}
-                        <div className="flex flex-col w-full lg:w-1/3 px-0 lg:px-4">
+                        {/* <div className="flex flex-col w-full lg:w-1/3 px-0 lg:px-4">
                             <h3 className="text-2xl font-medium mb-2">Utility</h3>
                             <ul className="space-y-2">
                                 {utility_items.map((item) => (
@@ -108,7 +108,7 @@ export default function Footer() {
                                     </li>
                                 ))}
                             </ul>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>

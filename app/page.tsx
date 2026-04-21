@@ -1,23 +1,20 @@
-import Link from "next/link";
-import { TiStarFullOutline } from "react-icons/ti";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaTripadvisor } from "react-icons/fa";
-import { GrSchedulePlay } from "react-icons/gr";
-import { TbArrowGuideFilled } from "react-icons/tb";
-import { MdOutlineLocalHotel } from "react-icons/md";
-import { MdOutlineGroups2 } from "react-icons/md";
-import Image from "next/image";
-import { destination_items, social_items } from "@/lib/data";
+import { CarouselTestimonial } from "@/components/carousel-testimonials";
 import { OfferCard } from "@/components/offer-card";
 import { PopularDestinationCard } from "@/components/popular-destination-card";
-import { SectionHeadline } from "@/components/section-headline";
-import { ViewMore } from "@/components/view-more";
 import { PopularTourCard } from "@/components/popular-tour-card";
-import { ClientTestimonialCard } from "@/components/client-testimonial-card";
+import { SectionHeadline } from "@/components/section-headline";
 import { TravelStoryCard } from "@/components/travel-story-card";
-import { travelStories, testimonials } from '@/lib/data'
-import { CarouselTestimonial } from "@/components/carousel-testimonials";
+import { ViewMore } from "@/components/view-more";
+import { destination_items, social_items, travelStories } from "@/lib/data";
 import { getDestinationData } from "@/lib/helpers";
+import Image from "next/image";
+import Link from "next/link";
+import { FaTripadvisor } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { GrSchedulePlay } from "react-icons/gr";
+import { MdOutlineGroups2, MdOutlineLocalHotel } from "react-icons/md";
+import { TbArrowGuideFilled } from "react-icons/tb";
+import { TiStarFullOutline } from "react-icons/ti";
 
 export default function Home() {
   return (
@@ -59,7 +56,7 @@ export default function Home() {
         </div>
 
         {/* landing page bottom details */}
-        <div className="flex flex-col mb-25 sm:mb-5 sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-6 w-full px-4 sm:px-8 md:px-12 lg:px-20 py-6 sm:py-8 md:py-12 lg:py-18 z-20">
+        <div className="flex flex-col mb-5 sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-6 w-full px-4 sm:px-8 md:px-12 lg:px-20 py-6 sm:py-8 md:py-12 lg:py-18 z-20">
 
           {/* online rating */}
           <Link
@@ -104,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* WHAT WE OFFER SECTION */}
-      <section className="flex flex-col items-center w-full bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="flex flex-col items-center w-full bg-white py-12 sm:py-16 lg:py-20">
 
         {/* intro text */}
         <p className="font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-black border border-black py-8 sm:py-10 px-6 sm:px-10 lg:px-16 my-8 sm:my-10 max-w-4xl text-center">
@@ -186,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* OUR TRAVEL STORIES SECTION */}
-      <section className="min-h-screen flex flex-col items-center justify-center w-full bg-gray-300 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
+      <section className="min-h-screen flex flex-col items-center justify-center w-full bg-gray-300 py-12 sm:py-16 md:py-20">
 
         {/* section headline */}
         <SectionHeadline color={"black"} title="Our travel stories" />

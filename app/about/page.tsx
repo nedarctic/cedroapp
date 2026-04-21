@@ -46,7 +46,7 @@ export default function About() {
                 <SectionHeadline color={"black"} title={"What we offer"} />
 
                 {/* what we offer cards */}
-                <div className="w-full max-w-7xl mt-6 sm:mt-8 md:mt-10 space-y-6">
+                <div className="flex flex-col items-center w-full mt-6 sm:mt-8 md:mt-10 space-y-6">
                     <OfferCard 
                         image_right={true} 
                         Logo={GrSchedulePlay} 
@@ -85,7 +85,7 @@ export default function About() {
                 <SectionHeadline title={"Meet our team"} color={"white"} />
 
                 {/* grid containing team member cards - responsive grid */}
-                <div className="w-full max-w-7xl mt-6 sm:mt-8 md:mt-10">
+                <div className="flex flex-col items-center w-full max-w-7xl mt-6 sm:mt-8 md:mt-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                         {teamMembers.map((member) => (
                             <TeamMemberCard
@@ -107,7 +107,7 @@ export default function About() {
                 <SectionHeadline title={"What our clients say"} color={"white"} />
 
                 {/* carousel with travel story cards */}
-                <div className="w-full max-w-7xl mt-6 sm:mt-8 md:mt-10">
+                <div className="w-full mt-6 sm:mt-8 md:mt-10">
                     <CarouselTestimonial />
                 </div>
             </section>

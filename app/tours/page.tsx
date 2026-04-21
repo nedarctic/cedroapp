@@ -11,7 +11,7 @@ export default async function Tours({ searchParams }: { searchParams: Promise<{ 
     const tours = await getTours(query);
 
     return (
-        <main className="flex flex-col justify-center items-center py-8 sm:py-12 md:py-16 lg:py-24 bg-white px-4 sm:px-6 md:px-8">
+        <main className="flex flex-col justify-center items-center py-8 sm:py-12 md:py-16 lg:py-24 bg-white">
 
             {/* page title headline */}
             <SectionHeadline title={"All tours"} color={"black"} />

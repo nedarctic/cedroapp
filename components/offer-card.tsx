@@ -15,7 +15,7 @@ export function OfferCard({
   image_right: boolean;
 }) {
   return (
-    <div className="flex flex-col md:flex-row items-center border border-black w-11/12 overflow-hidden">
+    <div className="flex flex-col md:flex-row items-center border border-black w-full overflow-hidden">
 
       {/* Image */}
       <div

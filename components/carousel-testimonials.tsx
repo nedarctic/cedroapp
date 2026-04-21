@@ -31,7 +31,7 @@ export function CarouselTestimonial() {
     }, [api])
 
     return (
-        <div className="relative w-full px-4 sm:px-6 md:px-8">
+        <div className="relative w-full">
             <Carousel 
                 setApi={setApi} 
                 className="w-full max-w-full overflow-visible"

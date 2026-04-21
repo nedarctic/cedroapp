@@ -14,7 +14,7 @@ export default function Header() {
         { label: 'Tours', href: '/tours' },
         { label: 'Destinations', href: '/destinations' },
         { label: 'About', href: '/about' },
-        { label: 'Blog', href: '/blogs' },
+        { label: 'Blogs', href: '/blogs' },
         { label: 'Contact', href: '/contact' },
     ];
 

@@ -112,7 +112,7 @@ export default function Home() {
         <SectionHeadline title={"What We Offer"} color={"black"} />
 
         {/* cards */}
-        <div className="flex flex-col items-center w-full max-w-6xl space-y-10 sm:space-y-14 lg:space-y-16">
+        <div className="flex flex-col items-center w-11/12 space-y-10 sm:space-y-14 lg:space-y-16">
           <OfferCard image_right={true} Logo={GrSchedulePlay} title={"Expertly Crafted Itineraries"} description={"Our team of travel experts meticulously designs each itinerary to showcase the best of Africa, combining must-see landmarks with hidden gems and authentic experiences."} image={"/offers/offer1.jpg"} />
           <OfferCard image_right={false} Logo={TbArrowGuideFilled} title={"Local Insights and Guides"} description={"Venture tours are led by knowledgeable local guides who provide insider insights, historical context, and personal anecdotes, enriching your travel experience and fostering meaningful connections."} image={"/offers/offer2.jpg"} />
           <OfferCard image_right={true} Logo={MdOutlineLocalHotel} title={"Comfortable Accommodations"} description={"Relax and recharge in carefully selected accommodations ranging from boutique hotels to charming bed and breakfasts, all chosen for their comfort, convenience, and local charm."} image={"/offers/offer3.jpg"} />

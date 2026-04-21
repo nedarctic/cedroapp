@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function TeamMemberCard({ image, name, designation, description }: {image: string; name: string; designation: string; description: string }) {
     return (
-        <div className="flex flex-col bg-black border-2 border-white h-150 w-94">
+        <div className="flex flex-col bg-black border-2 border-white h-150 w-full">
 
             {/* image */}
             <div className="relative h-3/4 w-full">

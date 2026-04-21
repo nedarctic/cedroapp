@@ -59,7 +59,7 @@ export default function Home() {
         </div>
 
         {/* landing page bottom details */}
-        <div className="flex flex-col mb-20 sm:mb-5 sm:flex-row items-center justify-center sm:justify-between gap-4 sm:gap-6 w-full px-4 sm:px-8 md:px-12 lg:px-20 py-6 sm:py-8 md:py-12 lg:py-18 z-20">
+        <div className="flex flex-col mb-25 sm:mb-5 sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-6 w-full px-4 sm:px-8 md:px-12 lg:px-20 py-6 sm:py-8 md:py-12 lg:py-18 z-20">
 
           {/* online rating */}
           <Link

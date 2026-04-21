@@ -5,10 +5,10 @@ import { Tour } from '@/lib/types';
 export function TourDetails({ safari }: { safari: Tour }) {
 
     return (
-        <div className="flex flex-col items-center justify-start py-6 px-6 border w-11/12 min-h-screen border-black bg-gray-300 mb-10">
+        <div className="flex flex-col items-center justify-start py-6 border w-full min-h-screen border-black bg-gray-300 mb-10">
 
             {/* data to show if details tab is active */}
-            <div className="flex flex-col items-start justify-center p-10">
+            <div className="flex flex-col items-start justify-center p-8">
 
                 {/* tour description */}
                 <h1 className="text-black text-xl font-bold mb-2">Tour Description:</h1>

@@ -136,7 +136,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
             </div>
 
             {/* information area - with details, itinerary, gallery area tabs*/}
-            <div className="w-full max-w-7xl">
+            <div className="flex flex-col items-center w-full max-w-7xl">
                 <TourDetails safari={safari} />
             </div>
 

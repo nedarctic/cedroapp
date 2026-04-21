@@ -73,7 +73,7 @@ export function Filters({ filters }: { filters: string[] }) {
                 {/* Mobile Filter Button */}
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="w-full flex items-center justify-between px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
+                    className="w-full flex items-center justify-between px-4 py-3 bg-white border border-gray-300 shadow-sm hover:bg-gray-50 transition-colors"
                 >
                     <span className="text-sm font-medium text-gray-700">
                         Filter: <span className="text-black font-semibold">{getActiveFilterLabel()}</span>
@@ -95,7 +95,7 @@ export function Filters({ filters }: { filters: string[] }) {
                         />
                         
                         {/* Dropdown Options */}
-                        <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                        <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white border border-gray-200 shadow-lg overflow-hidden">
                             <button
                                 onClick={() => handleClick("")}
                                 className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-gray-50 ${

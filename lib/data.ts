@@ -513,7 +513,7 @@ export const tours: Tour[] = [
       }
     ],
     link: "/tours/rwanda_gorilla_trekking",
-    heroImage: "/popular-tours/rwanda.jpg",
+    heroImage: "/popular-tours/rwanda-gorilla/rwanda-3.jpg",
     slug: "rwanda_gorilla_trekking",
     images: [
       "/popular-tours/rwanda-gorilla/rwanda-1.jpg",
@@ -610,7 +610,7 @@ export const tours: Tour[] = [
       }
     ],
     link: "/tours/tanzania_safari",
-    heroImage: "/popular-tours/tanzania.jpg",
+    heroImage: "/popular-tours/tanzania-safari/tanzania-5.jpg",
     slug: "tanzania_safari",
     images: [
       "/popular-tours/tanzania-safari/tanzania-1.jpg",
@@ -696,7 +696,7 @@ export const tours: Tour[] = [
       }
     ],
     link: "/tours/zanzibar_escape",
-    heroImage: "/popular-tours/zanzibar.jpg",
+    heroImage: "/popular-tours/zanzibar/zanzibar-4.jpg",
     slug: "zanzibar_escape",
     images: [
       "/popular-tours/zanzibar/zanzibar-1.jpg",

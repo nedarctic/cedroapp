@@ -1,11 +1,49 @@
-import { FiSearch } from "react-icons/fi";
+"use client";
 
-export function Search ({placeholder}: {placeholder: string}) {
+import { InputGroupInlineStart } from "@/components/input-group-inline-start";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+
+export function Search({placeholder}: {placeholder: string}) {
+
+    const router = useRouter();
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const initialQuery = searchParams.get("query") || "";
+    const [search, setSearch] = useState<string>(initialQuery);
+    const debounceTime = 500;
+
+    useEffect(() => {
+
+        const handler = setTimeout(() => {
+            const params = new URLSearchParams(searchParams.toString())
+
+            if (search) {
+                params.set("query", search);                
+            } else {
+                params.delete("query");
+            }
+
+            router.replace(`${pathname}?${params.toString()}`);
+        }, debounceTime)
+
+        return () => {
+            clearTimeout(handler)
+        }
+    }, [search, router]);
+
     return (
-        <div className="flex items-center w-80 border-black border px-6 py-2 justify-between">
-            <input placeholder={placeholder} className="font-normal text-md border-0" />
+        <div className="flex flex-col 
+        items-start sm:gap-6 gap-3">
+            <div className="flex gap-6 w-full">
+                <InputGroupInlineStart
+                    name="search"
+                    value={search}
+                    onChangeHandler={e => setSearch(e.target.value)}
+                    placeholder={placeholder}
+                />
+            </div>
 
-            <FiSearch size={20} className="text-black" />
         </div>
-    );
+    )
 }

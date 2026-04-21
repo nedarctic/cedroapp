@@ -66,7 +66,7 @@ export function CarouselTestimonial() {
                 </CarouselContent>
                 
                 {/* Mobile navigation buttons */}
-                <div className="flex justify-center gap-4 mt-6 sm:hidden">
+                <div className="flex justify-center gap-4 mt-10 sm:hidden">
                     <CarouselPrevious className="static transform-none" />
                     <CarouselNext className="static transform-none" />
                 </div>

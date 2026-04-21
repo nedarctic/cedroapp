@@ -25,7 +25,7 @@ export function InputGroupInlineStart({
 }: SearchInputType) {
   return (
     <Field className="w-full">
-      <InputGroup>
+      <InputGroup className="rounded-none">
         <InputGroupInput onChange={onChangeHandler} id="inline-start-input" placeholder={placeholder} value={value} name={name} />
         <InputGroupAddon align="inline-start">
           <SearchIcon className="text-muted-foreground" />

@@ -20,6 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Cedro Adventures" />
+      </head>
+      
       <body
         className={`${roboto.className} antialiased`}
       >

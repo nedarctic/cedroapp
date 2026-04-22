@@ -54,11 +54,11 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
 
             {/* destination image */}
             <div className="w-full max-w-7xl mt-8 sm:mt-12 md:mt-16 lg:mt-20">
-                <Image 
-                    src={safari.images[0]} 
-                    alt={safari.title} 
-                    width={900} 
-                    height={300} 
+                <Image
+                    src={safari.images[0]}
+                    alt={safari.title}
+                    width={900}
+                    height={300}
                     className="w-full border border-black object-cover h-auto"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                 />
@@ -66,13 +66,13 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
 
             {/* destination details - Responsive card */}
             <div className="w-full max-w-7xl bg-black my-8 sm:my-12 md:my-16 lg:my-20">
-                
+
                 {/* Top section - Grid layout for responsive */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                     {/* destination */}
                     <div className="flex flex-col items-start justify-center p-4 sm:p-6 border-b sm:border-b-0 sm:border-r border-white/30">
                         <div className="flex items-center mb-1">
-                            <FaLocationDot className="mr-2 text-white" size={18} /> 
+                            <FaLocationDot className="mr-2 text-white" size={18} />
                             <p className="text-white text-sm sm:text-base font-normal">Destination:</p>
                         </div>
                         <p className="text-yellow-400 text-base sm:text-lg font-normal">{safari.destination}</p>
@@ -81,7 +81,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                     {/* duration */}
                     <div className="flex flex-col items-start justify-center p-4 sm:p-6 border-b sm:border-b-0 sm:border-r border-white/30">
                         <div className="flex items-center mb-1">
-                            <FaRegClock className="mr-2 text-white" size={18} /> 
+                            <FaRegClock className="mr-2 text-white" size={18} />
                             <p className="text-white text-sm sm:text-base font-normal">Duration:</p>
                         </div>
                         <p className="text-yellow-400 text-base sm:text-lg font-normal">{safari.duration}</p>
@@ -90,7 +90,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                     {/* dates */}
                     <div className="flex flex-col items-start justify-center p-4 sm:p-6 border-b sm:border-b-0 lg:border-r border-white/30">
                         <div className="flex items-center mb-1">
-                            <FaCalendarDays className="mr-2 text-white" size={18} /> 
+                            <FaCalendarDays className="mr-2 text-white" size={18} />
                             <p className="text-white text-sm sm:text-base font-normal">Dates:</p>
                         </div>
                         <p className="text-yellow-400 text-base sm:text-lg font-normal">{safari.dates}</p>
@@ -99,7 +99,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                     {/* group size */}
                     <div className="flex flex-col items-start justify-center p-4 sm:p-6">
                         <div className="flex items-center mb-1">
-                            <HiOutlineUserGroup className="mr-2 text-white" size={18} /> 
+                            <HiOutlineUserGroup className="mr-2 text-white" size={18} />
                             <p className="text-white text-sm sm:text-base font-normal">Group size:</p>
                         </div>
                         <p className="text-yellow-400 text-base sm:text-lg font-normal">{safari.group_size}</p>
@@ -113,20 +113,20 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                     {/* price */}
                     <div className="flex items-center flex-wrap justify-center">
                         <AiOutlineDollar size={20} className="mr-2 text-white" />
-                        <p className="text-white text-base sm:text-lg font-normal">Price:</p> 
+                        <p className="text-white text-base sm:text-lg font-normal">Price:</p>
                         <span className="text-yellow-400 text-base sm:text-lg font-normal ml-2">{safari.price}</span>
                     </div>
 
                     {/* book tour and contact us buttons */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full px-4 sm:px-0">
-                        <Link 
-                            href={`/book/${safari.slug}`} 
+                        <Link
+                            href={`/book/${safari.slug}`}
                             className="flex justify-center items-center bg-yellow-400 text-black px-6 sm:px-8 py-2.5 font-medium w-full sm:w-auto min-w-[200px] transition hover:bg-yellow-500"
                         >
                             Book tour <HiArrowLongRight size={18} className="ml-2 sm:ml-4 text-black" />
                         </Link>
-                        <Link 
-                            href={"/contact"} 
+                        <Link
+                            href={"/contact"}
                             className="flex justify-center border-2 border-white text-white px-6 sm:px-8 py-2.5 font-medium w-full sm:w-auto min-w-[200px] transition hover:bg-white/10"
                         >
                             Contact us
@@ -181,7 +181,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                                 image={images[0]}
                                 price={price}
                                 title={title}
-                                link={link} 
+                                link={link}
                             />
                         ))}
                     </div>

@@ -31,7 +31,7 @@ export function ClientTestimonialCard({ name, testimonial, country, image, image
                     <Stars />
                 </div>
                 <p className="font-bold text-white text-lg sm:text-xl md:text-2xl break-words w-full">{name}</p>
-                <p className="font-medium text-white/90 text-sm sm:text-base md:text-lg leading-relaxed break-words w-full line-clamp-3 sm:line-clamp-4 md:line-clamp-none">
+                <p className="font-medium text-white/90 text-sm sm:text-base md:text-lg leading-relaxed break-words w-full">
                     "{testimonial}"
                 </p>
                 <p className="font-medium text-yellow-400 text-sm sm:text-base break-words w-full">{country}</p>

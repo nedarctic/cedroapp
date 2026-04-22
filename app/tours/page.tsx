@@ -27,7 +27,7 @@ export default async function Tours({ searchParams }: { searchParams: Promise<{ 
             </div>
 
             {/* grid containing tour cards */}
-            <div className="w-full flex flex-col justify-center items-center mt-12 sm:mt-16 md:mt-20">
+            <div className="w-full lg:w-11/12 flex flex-col justify-center items-center mt-12 sm:mt-16 md:mt-20">
                 {tours.length > 0 ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full px-4 sm:px-0">
                         {tours.map(({ dates,

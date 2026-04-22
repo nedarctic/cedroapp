@@ -17,7 +17,7 @@ export default async function Blogs({ searchParams }: {
             <section className="flex flex-col items-center justify-start w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8">
                 
                 {/* travel blog headline */}
-                <SectionHeadline title={"Our travel blog"} color={"black"} />
+                <SectionHeadline title={"Our travel blogs"} color={"black"} />
 
                 {/* search component - responsive width */}
                 <div className="w-full lg:w-1/3 mx-auto mt-4 sm:mt-6 md:mt-8 px-4 sm:px-0">

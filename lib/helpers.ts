@@ -48,7 +48,7 @@ export async function getBlogs(query: string) {
     });
 }
 
-export async function getTours(query: string) {
+export async function getTours(query?: string) {
     if (!query) return tours;
 
     const lowerQuery = query.toLowerCase();

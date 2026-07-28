@@ -8,13 +8,13 @@ import {
   TimelineTitle,
   TimelineContent
 } from "@/components/ui/timeline";
+import { Itinerary } from "@/lib/types/itinerary";
 import Image from "next/image";
-import type { Itinerary } from "@/lib/types";
 
-export default function TimelineComponent({itinerary}: {itinerary: Itinerary}) {
+export default function TimelineComponent({itinerary}: {itinerary: Itinerary[]}) {
   return (
     <Timeline className="w-full" defaultValue={3}>
-      {itinerary.map(({ day, title, activities, image }, index) => (
+      {itinerary.map(({ day, subtitle, activities, itineraryImageUrl }, index) => (
         <TimelineItem
           className="sm:group-data-[orientation=vertical]/timeline:ms-32"
           key={day}
@@ -25,12 +25,12 @@ export default function TimelineComponent({itinerary}: {itinerary: Itinerary}) {
             <TimelineDate className="sm:group-data-[orientation=vertical]/timeline:-left-32 sm:group-data-[orientation=vertical]/timeline:absolute sm:group-data-[orientation=vertical]/timeline:w-20 sm:group-data-[orientation=vertical]/timeline:text-right">
               {day}
             </TimelineDate>
-            <TimelineTitle>{title}</TimelineTitle>
+            <TimelineTitle>{subtitle}</TimelineTitle>
 
             {activities.map(activity => (<TimelineContent key={activity}>{activity}</TimelineContent>))}
 
             <div className="relative w-full h-100 mt-4">
-              <Image src={image} alt={image} fill className="object-cover" />
+              <Image src={itineraryImageUrl} alt={itineraryImageUrl} fill className="object-cover" />
             </div>
 
             <TimelineIndicator />

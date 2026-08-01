@@ -18,9 +18,9 @@ export function Filters({ filters }: { filters: string[] }) {
         const params = new URLSearchParams(searchParams.toString());
 
         if (filter) {
-            params.set("query", filter)
+            params.set("filter", filter)
         } else {
-            params.delete("query")
+            params.delete("filter")
         }
 
         router.replace(`${pathname}?${params.toString()}`, {

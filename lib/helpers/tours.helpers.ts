@@ -1,6 +1,6 @@
 import { Tour } from "../types/tour";
 
-export async function getTours(): Promise<{
+export async function getTours(url: string): Promise<{
     success: boolean;
     error?: string;
     data?: {
@@ -14,7 +14,6 @@ export async function getTours(): Promise<{
     }
 }> {
     try {
-        const url = `${process.env.BACKEND_URL}/tours/`;
         const res = await fetch(url, {
             method: "GET"
         });
@@ -78,7 +77,7 @@ export async function getOtherTours(tourId: string): Promise<{
     error?: string;
 }> {
     try {
-        const url = `${process.env.BACKEND_URL}/${tourId}/other-tours`;
+        const url = `${process.env.BACKEND_URL}/tours/${tourId}/other-tours`;
         const res = await fetch(url, {
             method: "GET"
         });

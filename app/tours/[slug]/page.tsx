@@ -22,6 +22,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
     const { price } = data!;
     const formattedPrice = Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(Number(price))
 
+    console.log("other tours:", otherTours)
     return (
         <main className="min-h-screen flex flex-col items-center justify-start bg-white w-full pt-20 sm:pt-24 md:pt-32 lg:pt-40 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
 
@@ -144,7 +145,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                 {/* grid containing tour cards */}
                 <div className="flex flex-col justify-center items-center w-full mt-8 sm:mt-12 md:mt-16 lg:mt-20">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full">
-                        {otherTours?.slice(0, 8).map(({ dates,
+                        {otherTours && otherTours.length ? otherTours?.slice(0, 8).map(({ dates,
                             groupSize,
                             destination,
                             duration,
@@ -164,7 +165,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                                 title={title}
                                 link={`/tours/${id}`}
                             />
-                        ))}
+                        )) : <p className="text-md">There are no other tours at the moment.</p>}
                     </div>
                 </div>
 

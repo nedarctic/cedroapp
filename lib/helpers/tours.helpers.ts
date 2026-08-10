@@ -18,19 +18,20 @@ export async function getTours(url: string): Promise<{
             method: "GET"
         });
 
-        const { data, error, success } = await res.json();
+        const data = await res.json();
 
-        if (!res.ok || !success) {
+        if (!res.ok) {
             return {
                 success: false,
-                error: error || "Backend request error"
+                error: data || "Backend request error"
             }
         }
 
         return {
-            success,
+            success: true,
             data
         }
+
     } catch (error) {
         return {
             success: false,
@@ -50,17 +51,17 @@ export async function getTour(tourId: string): Promise<{
             method: "GET"
         });
 
-        const { success, error, data } = await res.json();
+        const data = await res.json();
 
         if (!res.ok) {
             return {
                 success: false,
-                error: error || "Backend request data"
+                error: data || "Backend request data"
             }
         }
 
         return {
-            success,
+            success: true,
             data
         }
     } catch (error) {
@@ -82,17 +83,17 @@ export async function getOtherTours(tourId: string): Promise<{
             method: "GET"
         });
 
-        const { success, error, data } = await res.json();
+        const data = await res.json();
 
         if(!res.ok){
             return {
                 success: false,
-                error: error || "Backend request error"
+                error: data || "Backend request error"
             }
         }
 
         return {
-            success,
+            success: true,
             data
         }
     } catch (error) {

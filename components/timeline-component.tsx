@@ -14,7 +14,7 @@ import Image from "next/image";
 export default function TimelineComponent({itinerary}: {itinerary: Itinerary[]}) {
   return (
     <Timeline className="w-full" defaultValue={3}>
-      {itinerary.map(({ day, subtitle, activities, itineraryImageUrl }, index) => (
+      {itinerary.map(({ day, title, activities, dayImage }, index) => (
         <TimelineItem
           className="sm:group-data-[orientation=vertical]/timeline:ms-32"
           key={day}
@@ -25,12 +25,12 @@ export default function TimelineComponent({itinerary}: {itinerary: Itinerary[]})
             <TimelineDate className="sm:group-data-[orientation=vertical]/timeline:-left-32 sm:group-data-[orientation=vertical]/timeline:absolute sm:group-data-[orientation=vertical]/timeline:w-20 sm:group-data-[orientation=vertical]/timeline:text-right">
               {day}
             </TimelineDate>
-            <TimelineTitle>{subtitle}</TimelineTitle>
+            <TimelineTitle>{title}</TimelineTitle>
 
-            {activities.map(activity => (<TimelineContent key={activity}>{activity}</TimelineContent>))}
+            {activities.map((activity, index) => (<TimelineContent key={index}>{activity}</TimelineContent>))}
 
             <div className="relative w-full h-100 mt-4">
-              <Image src={itineraryImageUrl} alt={itineraryImageUrl} fill className="object-cover" />
+              <Image src={dayImage} alt={`Day ${index + 1} image`} fill className="object-cover" />
             </div>
 
             <TimelineIndicator />

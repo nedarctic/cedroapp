@@ -106,38 +106,6 @@ export async function getAllDestinations(): Promise<{
         }
     }
 }
-export async function getThreeLatestBlogs(): Promise<{
-    success: boolean;
-    data?: Blog[];
-    error?: string;
-}> {
-    try {
-        const url = `${process.env.BACKEND_URL}/blogs/three`;
-        const res = await fetch(url, {
-            method: "GET"
-        });
-
-        const data = await res.json()
-
-        if (!res.ok) {
-            return {
-                success: false,
-                error: data || "Failed to fetch latest blogs"
-            }
-        }
-
-        return {
-            success: true,
-            data
-        }
-
-    } catch (error) {
-        return {
-            success: false,
-            error: error instanceof Error ? error.message : String(error)
-        }
-    }
-}
 
 export async function getDestinationNames(): Promise<{
     success: boolean;

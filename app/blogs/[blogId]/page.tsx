@@ -1,16 +1,16 @@
-import { getBlog, getOtherBlogs } from '@/lib/helpers';
 import Image from 'next/image';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { TravelStoryCard } from '@/components/travel-story-card';
 import Link from 'next/link';
 import { ViewMore } from '@/components/view-more';
 import { SectionHeadline } from '@/components/section-headline';
+import { getBlog, getOtherBlogs } from '@/lib/helpers/blogs.helpers';
 
-export default async function BlogDetails({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params;
+export default async function BlogDetails({ params }: { params: Promise<{ blogId: string }> }) {
+    const { blogId } = await params;
 
-    const blog = await getBlog(slug);
-
+    const { data: blog } = await getBlog(blogId);
+    
     if (!blog) {
         return (
             <div className="h-screen w-full flex flex-col items-center justify-center">
@@ -19,7 +19,7 @@ export default async function BlogDetails({ params }: { params: Promise<{ slug: 
         );
     }
 
-    const otherBlogs = await getOtherBlogs(slug);
+    const { data: otherBlogs } = await getOtherBlogs(blogId);
 
     if (!otherBlogs) return null;
 
@@ -42,7 +42,7 @@ export default async function BlogDetails({ params }: { params: Promise<{ slug: 
                 {/* image */}
                 <div className="relative w-11/12 max-w-5xl h-[250px] sm:h-[350px] md:h-[500px] lg:h-[600px]">
                     <Image
-                        src={blog.image}
+                        src={blog.blogImage}
                         alt={blog.title}
                         fill
                         priority
@@ -62,8 +62,8 @@ export default async function BlogDetails({ params }: { params: Promise<{ slug: 
                         {blog.story.intro}
                     </p>
 
-                    {blog.story.sections.map(({ subtitle, content }) => (
-                        <div key={subtitle} className="space-y-2 md:space-y-3">
+                    {blog.story.sections.map(({ id, subtitle, content }) => (
+                        <div key={id} className="space-y-2 md:space-y-3">
                             <h2 className="text-black font-bold text-xl md:text-2xl">
                                 {subtitle}
                             </h2>
@@ -92,12 +92,12 @@ export default async function BlogDetails({ params }: { params: Promise<{ slug: 
 
                     {/* responsive grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
-                        {otherBlogs.map(({ slug, title, date, image, excerpt }) => (
-                            <div key={slug}>
-                                <Link href={`/blogs/${slug}`}>
+                        {otherBlogs.map(({ id, title, date, blogImage, excerpt }) => (
+                            <div key={id}>
+                                <Link href={`/blogs/${id}`}>
                                     <TravelStoryCard
                                         title={title}
-                                        image={image}
+                                        image={blogImage}
                                         date={date}
                                         story={excerpt}
                                     />

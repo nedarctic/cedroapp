@@ -5,7 +5,7 @@ export type Destination = {
     id: string;
     name: string;
     totalTours?: number;
-    tour?: Tour[];
+    tours?: Tour[];
     createdAt: string;
     updatedAt: string;
     guide?: Guide[];

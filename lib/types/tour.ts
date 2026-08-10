@@ -9,7 +9,7 @@ export type Tour = {
     activities: string[];
     included: string[];
     excluded: string[];
-    destination: Destination;
+    destination?: Destination;
     dates: string;
     duration: string;
     imageKey: string;

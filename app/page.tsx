@@ -7,6 +7,7 @@ import { TravelStoryCard } from "@/components/travel-story-card";
 import { ViewMore } from "@/components/view-more";
 import { social_items } from "@/lib/data";
 import { getAllDestinations, getThreeLatestBlogs } from "@/lib/helpers/destinations.helpers";
+import { getPopularTours } from "@/lib/helpers/tours.helpers";
 import Image from "next/image";
 import Link from "next/link";
 import { FaTripadvisor } from "react-icons/fa";
@@ -19,7 +20,10 @@ import { TiStarFullOutline } from "react-icons/ti";
 export default async function Home() {
 
   const { data: destinations } = await getAllDestinations();
-  const { data: latestBlogs } = await getThreeLatestBlogs()
+  const { data: latestBlogs } = await getThreeLatestBlogs();
+  const {data: popularTours} = await getPopularTours();
+
+  console.log("popular tours", popularTours);
 
   return (
     <main className="min-h-screen flex flex-col items-center bg-white dark:bg-black w-full">

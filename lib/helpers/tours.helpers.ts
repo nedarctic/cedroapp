@@ -102,3 +102,36 @@ export async function getOtherTours(tourId: string): Promise<{
         }
     }
 }
+
+export async function getPopularTours (): Promise<{
+    success: boolean;
+    data?: Tour[];
+    error?: string;
+}> {
+    try {
+        const url = `${process.env.BACKEND_URL}/tours/popular-tours`;
+        const res = await fetch(url, {
+            method: "GET"
+        });
+
+        const data = await res.json();
+
+        if(!res.ok){
+            return {
+                success: false,
+                error: data || "Failed to fetch popular tours"
+            }
+        };
+
+        return {
+            success: true,
+            data
+        }
+
+    } catch (error) {
+        return {
+            success: false,
+            error: error instanceof Error ? error.message : String(error)
+        }
+    }
+}

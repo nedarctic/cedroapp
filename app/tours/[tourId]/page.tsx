@@ -20,6 +20,8 @@ export default async function Itinerary({ params }: { params: Promise<{ tourId: 
 
     const { data: otherTours } = await getOtherTours(tourId);
 
+    console.log("other tours", otherTours);
+
     const { success, data, error } = await getTour(tourId);
 
     console.log("tour", data);

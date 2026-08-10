@@ -5,8 +5,8 @@ import { PopularTourCard } from "@/components/popular-tour-card";
 import { SectionHeadline } from "@/components/section-headline";
 import { TravelStoryCard } from "@/components/travel-story-card";
 import { ViewMore } from "@/components/view-more";
-import { destination_items, social_items, travelStories } from "@/lib/data";
-import { getDestinationData } from "@/lib/helpers";
+import { social_items } from "@/lib/data";
+import { getAllDestinations, getThreeLatestBlogs } from "@/lib/helpers/destinations.helpers";
 import Image from "next/image";
 import Link from "next/link";
 import { FaTripadvisor } from "react-icons/fa";
@@ -15,13 +15,12 @@ import { GrSchedulePlay } from "react-icons/gr";
 import { MdOutlineGroups2, MdOutlineLocalHotel } from "react-icons/md";
 import { TbArrowGuideFilled } from "react-icons/tb";
 import { TiStarFullOutline } from "react-icons/ti";
-import { getAllDestinations } from "@/lib/helpers/destinations.helpers";
 
 export default async function Home() {
 
-  const {data: destinations} = await getAllDestinations();
+  const { data: destinations } = await getAllDestinations();
+  const { data: latestBlogs } = await getThreeLatestBlogs()
 
-  console.log("Destinations:", destinations);
   return (
     <main className="min-h-screen flex flex-col items-center bg-white dark:bg-black w-full">
 
@@ -196,9 +195,9 @@ export default async function Home() {
         {/* grid with travel story cards */}
         <div className="flex flex-col justify-center items-center w-11/12 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 md:gap-8 w-full">
-            {travelStories.map(({ title, image, excerpt, date, slug }) => (
-              <Link key={slug} href={`/blogs/${slug}`} className="w-full">
-                <TravelStoryCard title={title} image={image} date={date} story={excerpt} />
+            {latestBlogs?.map(({ title, blogImage, excerpt, date, id }) => (
+              <Link key={id} href={`/blogs/${id}`} className="w-full">
+                <TravelStoryCard title={title} image={blogImage} date={date} story={excerpt} />
               </Link>
             ))}
           </div>

@@ -13,12 +13,16 @@ import { HiOutlineUserGroup } from "react-icons/hi";
 import { HiArrowLongRight } from "react-icons/hi2";
 
 
-export default async function Itinerary({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Itinerary({ params }: { params: Promise<{ tourId: string }> }) {
 
-    const { slug } = await params;
-    const { data: otherTours } = await getOtherTours(slug);
+    const { tourId } = await params;
+    console.log("tour id", tourId);
 
-    const { success, data, error } = await getTour(slug);
+    const { data: otherTours } = await getOtherTours(tourId);
+
+    const { success, data, error } = await getTour(tourId);
+
+    console.log("tour", data);
     const { price } = data!;
     const formattedPrice = Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(Number(price))
 
@@ -35,12 +39,12 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
             </div>
 
             {/* destination image */}
-            <div className="w-full max-w-7xl mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+            <div className="relative w-full max-w-7xl aspect-video mt-8 sm:mt-12 md:mt-16 lg:mt-20">
                 <Image
-                    src={data?.tourImageUrl!}
+                    src={data?.tourImage!}
                     alt={data?.title!}
-                    width={900}
-                    height={300}
+                    fill
+                    unoptimized
                     className="w-full border border-black object-cover h-auto"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                 />
@@ -127,7 +131,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                 <div className="flex flex-col items-start w-full mb-4 sm:mb-6">
                     <h1 className="text-black text-xl sm:text-2xl font-bold my-3 self-start">Itinerary</h1>
                 </div>
-                <TimelineComponent itinerary={data?.itineraries!} />
+                <TimelineComponent itinerary={data?.itinerary!} />
             </section>
 
             {/* FAQs */}
@@ -149,7 +153,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                             groupSize,
                             destination,
                             duration,
-                            tourImageUrl,
+                            tourImage,
                             price,
                             title,
                             id
@@ -160,7 +164,7 @@ export default async function Itinerary({ params }: { params: Promise<{ slug: st
                                 group_size={groupSize}
                                 destination={destination?.name!}
                                 duration={duration}
-                                image={tourImageUrl}
+                                image={tourImage}
                                 price={price}
                                 title={title}
                                 link={`/tours/${id}`}

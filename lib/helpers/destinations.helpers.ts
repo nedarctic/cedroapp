@@ -112,7 +112,7 @@ export async function getThreeLatestBlogs(): Promise<{
     error?: string;
 }> {
     try {
-        const url = `${process.env.BACKEND_URL}/destinations/three`;
+        const url = `${process.env.BACKEND_URL}/blogs/three`;
         const res = await fetch(url, {
             method: "GET"
         });
@@ -130,6 +130,7 @@ export async function getThreeLatestBlogs(): Promise<{
             success: true,
             data
         }
+
     } catch (error) {
         return {
             success: false,

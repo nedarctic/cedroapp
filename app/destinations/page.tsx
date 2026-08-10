@@ -47,10 +47,10 @@ export default async function Destinations({ searchParams }: {
                 {/* grid with popular destination cards */}
                 <div className="flex flex-col justify-center items-center w-full max-w-7xl mx-auto mt-6 sm:mt-8 md:mt-10 lg:mt-12">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full">
-                        {destinations.map(({ name, id, destinationImageUrl, totalTours }) => (
-                            <Link key={destinationImageUrl} href={`/destinations/${id}`} className="block transition-transform hover:scale-[1.02] duration-300">
+                        {destinations.map(({ name, id, destinationImage, totalTours }) => (
+                            <Link key={destinationImage} href={`/destinations/${id}`} className="block transition-transform hover:scale-[1.02] duration-300">
                                 <PopularDestinationCard
-                                    image={destinationImageUrl}
+                                    image={destinationImage}
                                     destination={name}
                                     tours={Number(totalTours)}
                                 />

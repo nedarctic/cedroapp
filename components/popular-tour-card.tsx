@@ -18,12 +18,13 @@ export function PopularTourCard({
   destination: string;
   duration: string;
   dates: string;
-  group_size?: string;
+  group_size?: number;
   special_offer?: boolean;
-  price: string;
+  price: number;
   image: string;
   link: string;
 }) {
+
   return (
     <Link
       href={link}
@@ -103,7 +104,7 @@ export function PopularTourCard({
 
           <div className="flex justify-between items-center border border-black px-2 sm:px-3 py-1.5 sm:py-2 mt-1 sm:mt-2">
             <span className="text-xs sm:text-sm">Price:</span>
-            <span className="font-medium text-sm sm:text-base truncate ml-2">{price}</span>
+            <span className="font-medium text-sm sm:text-base truncate ml-2">{Intl.NumberFormat("en-US", { currency: "USD", style: "currency" }).format(price)}</span>
           </div>
 
         </div>

@@ -13,14 +13,14 @@ export function TourDetails({ safari }: { safari: Tour }) {
                 {/* tour description */}
                 <div className="flex flex-col gap-2">
                     <h1 className="text-black text-xl font-bold">Tour Description</h1>
-                    <p className="text-black text-md font-normal">{safari.description}</p>
+                    <p className="text-black text-md font-normal">{safari.intro}</p>
                 </div>
 
                 {/* what's included */}
                 <div className="flex flex-col gap-2">
                     <h1 className="text-black text-xl font-bold">What's Included</h1>
                     <ul className="list-disc pl-4">
-                        {safari.included.map((item) => <li key={item} className="font-normal text-md text-black">{item}</li>)}
+                        {safari.included.map((item, index) => <li key={index} className="font-normal text-md text-black">{item}</li>)}
                     </ul>
                 </div>
 
@@ -28,7 +28,7 @@ export function TourDetails({ safari }: { safari: Tour }) {
                 <div className="flex flex-col gap-2">
                     <h1 className="text-black text-xl font-bold">What's Excluded</h1>
                     <ul className="list-disc pl-4">
-                        {safari.excluded.map((item) => <li key={item} className="font-normal text-md text-black">{item}</li>)}
+                        {safari.excluded.map((item, index) => <li key={index} className="font-normal text-md text-black">{item}</li>)}
                     </ul>
                 </div>
 
@@ -36,7 +36,7 @@ export function TourDetails({ safari }: { safari: Tour }) {
                 <div className="flex flex-col gap-2">
                     <h1 className="text-black text-xl font-bold">Activities</h1>
                     <ul className="list-disc pl-4">
-                        {safari.activities.map((item) => <li key={item} className="font-normal text-md text-black">{item}</li>)}
+                        {safari.activities.map((item, index) => <li key={index} className="font-normal text-md text-black">{item}</li>)}
                     </ul>
                 </div>
 

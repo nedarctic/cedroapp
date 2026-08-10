@@ -21,7 +21,7 @@ export default async function Home() {
 
   const { data: destinations } = await getAllDestinations();
   const { data: latestBlogs } = await getThreeLatestBlogs();
-  const {data: popularTours} = await getPopularTours();
+  const { data: popularTours } = await getPopularTours();
 
   console.log("popular tours", popularTours);
 
@@ -165,9 +165,18 @@ export default async function Home() {
 
         <div className="w-full max-w-7xl flex flex-col items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 w-full">
-            <PopularTourCard title={"4-Days Maasai Mara Kenyan Safari"} destination={"Kenya"} duration={"4 Days / 3 Nights"} dates={"Anytime"} price={"From USD $1,371.00"} image={"/popular-tours/maasai-mara.jpg"} group_size={"Max 16 People"} special_offer={true} link="/tours/maasai_mara_safari" />
-            <PopularTourCard title={"3-day Kenyan wildlife Safari"} destination={"Kenya"} duration={"3 Days / 2 Nights"} dates={"Anytime"} price={"From: USD $1,059.00"} image={"/popular-tours/amboseli.jpg"} group_size={"Max 20 People"} link="/tours/kenya_wildlife_safari" />
-            <PopularTourCard title={"Kenya Luxury Safari Experience"} destination={"Kenya"} duration={"6 Days / 5 Nights"} dates={"Anytime"} price={"From: USD $3,290.00"} image={"/popular-tours/kenya-luxury.jpg"} group_size={"Max 16 People"} link="/tours/kenya_luxury_safari" />
+            {popularTours?.map(({ id, title, destination, duration, dates, price, groupSize, tourImage }) =>
+              <PopularTourCard
+                title={title}
+                destination={destination?.name!}
+                duration={duration}
+                price={price}
+                dates={dates}
+                image={tourImage}
+                group_size={groupSize}
+                key={id}
+                link={`/tours/${id}`}
+              />)}
           </div>
 
           {/* horizontal line and view more tours */}

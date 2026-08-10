@@ -1,14 +1,14 @@
 import { Tour } from "./tour";
 
-export interface Itinerary {
+export type Itinerary = {
     id: string;
     activities: string[];
-    subtitle: string;
+    title: string;
     day: string;
-    itineraryImageKey: string;
-    itineraryImageUrl: string;
+    imageKey: string;
+    dayImage: string;
     createdAt: string;
     updatedAt: string;
-    tour?: Tour;
+    tour: Tour;
     tourId: string;
-}
+};

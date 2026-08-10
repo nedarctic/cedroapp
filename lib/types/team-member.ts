@@ -1,11 +1,11 @@
-export interface TeamMember {
+export type TeamMember = {
     id: string;
     name: string;
     designation: string;
-    level: string;
     description: string;
-    memberImageKey: string;
-    memberImageUrl: string;
+    imageKey: string;
+    memberImage: string;
+    level: string;
     createdAt: string;
     updatedAt: string;
 }

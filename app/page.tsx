@@ -15,8 +15,13 @@ import { GrSchedulePlay } from "react-icons/gr";
 import { MdOutlineGroups2, MdOutlineLocalHotel } from "react-icons/md";
 import { TbArrowGuideFilled } from "react-icons/tb";
 import { TiStarFullOutline } from "react-icons/ti";
+import { getAllDestinations } from "@/lib/helpers/destinations.helpers";
 
-export default function Home() {
+export default async function Home() {
+
+  const {data: destinations} = await getAllDestinations();
+
+  console.log("Destinations:", destinations);
   return (
     <main className="min-h-screen flex flex-col items-center bg-white dark:bg-black w-full">
 
@@ -130,12 +135,12 @@ export default function Home() {
 
           {/* Responsive grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full">
-            {destination_items.map(({ label, href, image }) => (
-              <Link key={image} href={href}>
+            {destinations?.map(({ destinationImage, name, totalTours, id }) => (
+              <Link key={id} href={`/destinations/${id}`}>
                 <PopularDestinationCard
-                  image={image}
-                  destination={label}
-                  tours={getDestinationData(label).length}
+                  image={destinationImage}
+                  destination={name}
+                  tours={totalTours!}
                 />
               </Link>
             ))}

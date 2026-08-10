@@ -1,24 +1,25 @@
 import { Booking } from "./booking";
-import { Destination } from "./destinations";
+import { Destination } from "./destination";
 import { Itinerary } from "./itinerary";
 
-export interface Tour {
+export type Tour = {
     id: string;
     title: string;
-    description: string;
-    activities: string[]
-    included: string[]
-    excluded: string[]
-    destination?: Destination;
+    intro: string;
+    activities: string[];
+    included: string[];
+    excluded: string[];
+    destination: Destination;
     dates: string;
     duration: string;
-    tourImageKey: string;
-    tourImageUrl: string;
-    groupSize: string;
-    price: string;
-    itineraries?: Itinerary[]
-    bookings?: Booking[]
+    imageKey: string;
+    tourImage: string;
+    groupSize: number;
+    price: number;
+    itinerary: Itinerary[];
+    destinationId: string;
+    totalBookings?: string;
+    bookings?: Booking[];
     createdAt: string;
     updatedAt: string;
-    destinationId: string;
 }

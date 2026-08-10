@@ -1,15 +1,16 @@
+import {
+    email,
+    pages_items,
+    phone,
+    social_items
+} from "@/lib/data";
+import { getDestinationNamesAndIds } from "@/lib/helpers/destinations.helpers";
 import Image from "next/image";
 import Link from "next/link";
-import {
-    destination_items,
-    pages_items,
-    utility_items,
-    social_items,
-    email,
-    phone,
-} from "@/lib/data";
 
-export default function Footer() {
+export default async function Footer() {
+
+    const { data: destination_items } = await getDestinationNamesAndIds();
     return (
         <footer className="flex flex-col justify-between bg-gray-300 text-black min-h-screen px-6 md:px-12 lg:px-28 pt-16 lg:pt-20">
 
@@ -72,10 +73,10 @@ export default function Footer() {
                         <div className="flex flex-col w-full lg:w-1/3 px-0 lg:px-4 mb-8 lg:mb-0">
                             <h3 className="text-2xl font-medium mb-2">Destinations</h3>
                             <ul className="space-y-2">
-                                {destination_items.map((item) => (
-                                    <li key={item.label}>
-                                        <Link href={item.href} className="text-gray-700 hover:text-black text-lg lg:text-xl">
-                                            {item.label}
+                                {destination_items?.map((item) => (
+                                    <li key={item.id}>
+                                        <Link href={`/destinations/${item.id}`} className="text-gray-700 hover:text-black text-lg lg:text-xl">
+                                            {item.name}
                                         </Link>
                                     </li>
                                 ))}

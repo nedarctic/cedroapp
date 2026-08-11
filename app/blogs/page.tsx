@@ -30,7 +30,6 @@ export default async function Blogs({ searchParams }: {
 
     const { data: paginatedBlogsData } = await getBlogs(url);
     const { blogs, meta } = paginatedBlogsData!;
-    console.log("blogs", blogs);
 
     return (
         <main className="min-h-screen flex flex-col items-center bg-white w-full">

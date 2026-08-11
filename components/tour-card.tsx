@@ -5,8 +5,8 @@ interface TourCardProps {
   title: string;
   intro: string;
   duration: string;
-  group_size: string;
-  price: string;
+  group_size: number;
+  price: number;
   heroImage: string;
   slug: string;
 }
@@ -54,7 +54,7 @@ export function TourCard({
         {/* price + CTA */}
         <div className="flex items-center justify-between pt-4">
           <p className="text-black font-bold text-lg">
-            {price}
+            {Intl.NumberFormat("en-US", {currency: "USD", style: "currency"}).format(price)}
           </p>
 
           <Link

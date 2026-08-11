@@ -136,3 +136,32 @@ export async function getPopularTours (): Promise<{
         }
     }
 }
+
+export async function getAllTours (): Promise<{success: boolean; data?: Tour[]; error?: string }> {
+    try {
+        const url = `${process.env.BACKEND_URL}/tours`;
+        const res = await fetch(url, {
+            method: "GET"
+        });
+
+        const data = await res.json();
+
+        if(!res.ok){
+            return {
+                success: false,
+                error: data || "Failed to fetch tours"
+            }
+        }
+
+        return {
+            success: true,
+            data
+        }
+
+    } catch (error) {
+        return {
+            success: false,
+            error: error instanceof Error ? error.message : String(error)
+        }
+    }
+}

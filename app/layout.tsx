@@ -5,6 +5,7 @@ import Footer from "@/components/footer";
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Toaster } from "sonner";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -67,6 +68,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Toaster richColors />
         <Footer />
       </body>
     </html>

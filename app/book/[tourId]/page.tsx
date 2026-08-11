@@ -1,14 +1,14 @@
 // app/book/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getTour } from "@/app/tours/[slug]/page";
+import { getTour } from "@/lib/helpers/tours.helpers";
 import { SectionHeadline } from "@/components/section-headline";
 import { BookTourForm } from "@/components/book-tour-form";
 
-export default async function BookTour({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params;
+export default async function BookTour({ params }: { params: Promise<{ tourId: string }> }) {
+    const { tourId } = await params;
 
-    const tour = await getTour(slug);
+    const {data: tour} = await getTour(tourId);
 
     if (!tour) return notFound();
 
@@ -25,10 +25,10 @@ export default async function BookTour({ params }: { params: Promise<{ slug: str
                     {/* hero image */}
                     <div className="relative w-full aspect-video border-b-2 border-black">
                         <Image
-                            src={tour.heroImage}
+                            src={tour.tourImage}
                             alt={tour.title}
                             fill
-                            priority
+                            unoptimized
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                         />
@@ -52,7 +52,7 @@ export default async function BookTour({ params }: { params: Promise<{ slug: str
                                 <svg className="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
-                                {tour.group_size}
+                                {tour.groupSize}
                             </span>
                             <span className="inline-flex items-center gap-1">
                                 <svg className="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ export default async function BookTour({ params }: { params: Promise<{ slug: str
 
                         <div className="pt-2">
                             <p className="text-black font-bold text-xl sm:text-2xl md:text-3xl">
-                                {tour.price}
+                                {Intl.NumberFormat("en-US", {currency: "USD", style: "currency"}).format(tour.price)}
                             </p>
                             <p className="text-gray-500 text-xs sm:text-sm">per person</p>
                         </div>
@@ -78,7 +78,7 @@ export default async function BookTour({ params }: { params: Promise<{ slug: str
                 <SectionHeadline title="Book This Tour" color="black" />
 
                 <div className="flex flex-col items-center w-full max-w-2xl mt-6 sm:mt-8 md:mt-10">
-                    <BookTourForm tourTitle={tour.title} />
+                    <BookTourForm tourTitle={tour.title} tourId={tourId} />
                 </div>
             </section>
         </main>

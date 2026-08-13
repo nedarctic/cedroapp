@@ -24,8 +24,6 @@ export default async function Home() {
   const { data: latestBlogs } = await getThreeLatestBlogs();
   const { data: popularTours } = await getPopularTours();
 
-  console.log("popular tours", popularTours);
-
   return (
     <main className="min-h-screen flex flex-col items-center bg-white dark:bg-black w-full">
 

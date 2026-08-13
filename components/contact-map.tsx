@@ -22,12 +22,16 @@ export const ContactMap = () => {
                 </h3>
               </div>
               <p className="text-gray-800 leading-relaxed text-sm sm:text-base">
-                Bazaar Plaza<br />
+                2nd Floor, 90 JGO, Mugumo Gardens,<br />
                 Moi Avenue<br />
-                Nairobi, Kenya
+                LR. NO.3734/173
+                Lavington, NAIROBI
               </p>
+
+              
+, 
               <a 
-                href="https://maps.google.com/?q=Bazaar+Plaza+Moi+Avenue+Nairobi" 
+                href="https://maps.app.goo.gl/j1DjRX3efz2FmbPJ8" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block text-yellow-600 text-xs sm:text-sm font-medium hover:text-yellow-700 transition mt-1"

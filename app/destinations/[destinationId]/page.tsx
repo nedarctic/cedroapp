@@ -14,9 +14,7 @@ export default async function DestinationDetails({ params }: { params: Promise<{
             <p>Failed to fetch destination details. Please refresh the page or try again later.</p>
         </div>
     }
-
-    console.log("destination", destination);
-
+    
     const {
         guide: destinationGuide,
         tours: destinationTours

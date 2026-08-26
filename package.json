@@ -10,8 +10,6 @@
         "postinstall": "prisma generate"
     },
     "dependencies": {
-        "@prisma/adapter-pg": "^7.7.0",
-        "@prisma/client": "^7.7.0",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "drizzle-orm": "^0.45.1",
@@ -31,7 +29,6 @@
         "zod": "^4.3.6"
     },
     "devDependencies": {
-        "@prisma/config": "^7.7.0",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20",
         "@types/pg": "^8.18.0",
@@ -41,7 +38,6 @@
         "drizzle-kit": "^0.31.9",
         "eslint": "^9",
         "eslint-config-next": "16.1.6",
-        "prisma": "^7.7.0",
         "tailwindcss": "^4",
         "typescript": "^5"
     }

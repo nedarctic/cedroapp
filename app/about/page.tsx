@@ -1,17 +1,15 @@
-import { SectionHeadline } from "@/components/section-headline";
-import { GrSchedulePlay } from "react-icons/gr";
-import { TbArrowGuideFilled } from "react-icons/tb";
-import { MdOutlineLocalHotel } from "react-icons/md";
-import { MdOutlineGroups2 } from "react-icons/md";
-import { OfferCard } from "@/components/offer-card";
 import { AboutHero } from "@/components/about-hero";
+import { CarouselTestimonial } from "@/components/carousel-testimonials";
+import { OfferCard } from "@/components/offer-card";
+import { SectionHeadline } from "@/components/section-headline";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { TravelStoryCard } from "@/components/travel-story-card";
-import { travelStories, teamMembers } from "@/lib/data";
-import Link from 'next/link';
-import { CarouselTestimonial } from "@/components/carousel-testimonials";
 import { getThreeLatestBlogs } from "@/lib/helpers/blogs.helpers";
 import { getMembers } from "@/lib/helpers/team.helpers";
+import Link from 'next/link';
+import { GrSchedulePlay } from "react-icons/gr";
+import { MdOutlineGroups2, MdOutlineLocalHotel } from "react-icons/md";
+import { TbArrowGuideFilled } from "react-icons/tb";
 
 export default async function About() {
 

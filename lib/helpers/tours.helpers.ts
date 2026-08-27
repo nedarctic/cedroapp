@@ -112,7 +112,8 @@ export async function getPopularTours (): Promise<{
     try {
         const url = `${process.env.BACKEND_URL}/tours/popular-tours`;
         const res = await fetch(url, {
-            method: "GET"
+            method: "GET",
+            cache: "no-store"
         });
 
         const data = await res.json();

@@ -9,7 +9,8 @@ export async function getThreeLatestBlogs(): Promise<{
     try {
         const url = `${process.env.BACKEND_URL}/blogs/three`;
         const res = await fetch(url, {
-            method: "GET"
+            method: "GET",
+            cache: "no-store"
         });
 
         const data = await res.json()

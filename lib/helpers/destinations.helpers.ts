@@ -83,6 +83,7 @@ export async function getAllDestinations(): Promise<{
         const url = `${process.env.BACKEND_URL}/destinations/all`;
         const res = await fetch(url, {
             method: "GET",
+            cache: "no-store"
         });
 
         const data = await res.json();

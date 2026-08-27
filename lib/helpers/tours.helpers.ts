@@ -142,7 +142,8 @@ export async function getAllTours (): Promise<{success: boolean; data?: Tour[]; 
     try {
         const url = `${process.env.BACKEND_URL}/tours`;
         const res = await fetch(url, {
-            method: "GET"
+            method: "GET",
+            cache: "no-store"
         });
 
         const data = await res.json();

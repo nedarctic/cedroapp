@@ -90,7 +90,9 @@ export default async function Itinerary({ params }: { params: Promise<{ tourId: 
                             <HiOutlineUserGroup className="mr-2 text-white" size={18} />
                             <p className="text-white text-sm sm:text-base font-normal">Group size:</p>
                         </div>
-                        <p className="text-yellow-400 text-base sm:text-lg font-normal">{data?.groupSize}</p>
+                        <p className="text-yellow-400 text-base sm:text-lg font-normal">
+                            {data?.tourType === "PRIVATE" ? "Private" : data?.groupSize}
+                        </p>
                     </div>
                 </div>
 

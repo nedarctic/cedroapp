@@ -12,7 +12,7 @@ export default async function Footer() {
 
     const { data: destination_items } = await getDestinationNamesAndIds();
     return (
-        <footer className="flex flex-col justify-between bg-[#453D22] text-black min-h-screen px-6 md:px-12 lg:px-28 pt-16 lg:pt-20">
+        <footer className="flex flex-col justify-between bg-[#453D22] text-white min-h-screen px-6 md:px-12 lg:px-28 pt-16 lg:pt-20">
 
             {/* main content */}
             <div className="flex flex-col lg:flex-row gap-12">
@@ -31,22 +31,21 @@ export default async function Footer() {
                     <Link href={email.href} className="mt-6 text-xl">
                         Email:
                         <br />
-                        <span className="text-lg font-light text-black">
+                        <span className="text-lg font-light text-white">
                             {email.label}
                         </span>
                     </Link>
-
-                    <hr className="my-4 w-full border-black" />
+                    <hr className="my-4 w-full border-white" />
 
                     <Link href={phone.href} className="text-xl">
                         Phone:
                         <br />
-                        <span className="text-lg font-light text-black">
+                        <span className="text-lg font-light text-white">
                             {phone.label}
                         </span>
                     </Link>
 
-                    <hr className="my-4 w-full border-gray-400" />
+                    <hr className="my-4 w-full border-white" />
 
                     {/* socials */}
                     <div className="flex flex-wrap gap-3 mt-4">
@@ -54,7 +53,7 @@ export default async function Footer() {
                             <Link
                                 key={item.label}
                                 href={item.href}
-                                className="flex items-center text-black hover:text-black text-sm border border-black px-2 py-1"
+                                className="flex items-center text-white hover:text-white text-sm border border-white px-2 py-1"
                             >
                                 <item.logo className="w-4 h-4" />
                                 <span className="ml-1">{item.label}</span>
@@ -75,7 +74,7 @@ export default async function Footer() {
                             <ul className="space-y-2">
                                 {destination_items?.map((item) => (
                                     <li key={item.id}>
-                                        <Link href={`/destinations/${item.id}`} className="text-black hover:text-black text-lg lg:text-xl">
+                                        <Link href={`/destinations/${item.id}`} className="text-white hover:text-white text-lg lg:text-xl">
                                             {item.name}
                                         </Link>
                                     </li>
@@ -89,7 +88,7 @@ export default async function Footer() {
                             <ul className="space-y-2">
                                 {pages_items.map((item) => (
                                     <li key={item.label}>
-                                        <Link href={item.href} className="text-black hover:text-black text-lg lg:text-xl">
+                                        <Link href={item.href} className="text-white hover:text-white text-lg lg:text-xl">
                                             {item.label}
                                         </Link>
                                     </li>
@@ -103,7 +102,7 @@ export default async function Footer() {
                             <ul className="space-y-2">
                                 {utility_items.map((item) => (
                                     <li key={item.label}>
-                                        <Link href={item.href} className="text-gray-700 hover:text-black text-lg lg:text-xl">
+                                        <Link href={item.href} className="text-gray-700 hover:text-white text-lg lg:text-xl">
                                             {item.label}
                                         </Link>
                                     </li>
@@ -118,7 +117,7 @@ export default async function Footer() {
             {/* bottom */}
             <div className="py-4 flex flex-col items-center">
                 <hr className="w-full border-gray-400 mb-2" />
-                <div className="text-center text-black text-sm">
+                <div className="text-center text-white text-sm">
                     © {new Date().getFullYear()} Cedro Adventures. All rights reserved.
                 </div>
             </div>

@@ -66,7 +66,13 @@ export default async function ToursPage() {
           </section>
         </>
       ) : (
-        <section className="flex flex-col items-center justify-center py-12 sm:py-16 md:py-20 lg:py-24 w-full px-4 sm:px-6 md:px-8 gap-6">
+        <section className="min-h-screen flex flex-col items-center justify-center py-12 sm:py-16 w-full px-4 sm:px-6 md:px-8 gap-6">
+          
+          <SectionHeadline
+              title="Our Safari Tours"
+              color="black"
+            />
+
           <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4 leading-relaxed">
             Our tours are currently being updated. Please check back soon to explore the most sought-after adventures from Cedro Adventures.
           </p>

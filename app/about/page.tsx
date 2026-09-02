@@ -35,7 +35,7 @@ export default async function About() {
                 </p>
 
                 {/* hero image + mission + why us => about hero component */}
-                <div className="w-full max-w-7xl">
+                <div className="w-full max-w-7xl pt-6 sm:pt-8 md:pt-10">
                     <AboutHero
                         image={"/about-hero.jpg"}
                         image_description={"About hero image featuring the Maasai Mara scenery bustling with wildlife"}
@@ -84,6 +84,72 @@ export default async function About() {
                         image={"/offers/offer4.jpg"}
                     />
                 </div>
+            </section>
+
+            {/* where to find us section */}
+            <section className="min-h-screen flex flex-col justify-center items-center bg-gray-50 w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
+
+                {/* section headline */}
+                <SectionHeadline color={"black"} title={"Where to Find Us"} />
+
+                {/* description - responsive width and text size */}
+                <p className="text-gray-700 text-base sm:text-lg md:text-xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center py-6 sm:py-8 md:py-10 px-4">
+                    We also cooperate with other listing platforms and are represented on the online African tour marketplace{" "}
+                    <Link
+                        href="https://www.safaribookings.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-500 hover:text-orange-600 font-semibold underline transition-colors duration-200"
+                    >
+                        SafariBookings.com
+                    </Link>
+                    . We're also a five-star rated travel agency on{" "}
+                    <Link
+                        href="https://www.tripadvisor.com/Attraction_Review-g294207-d32985892-Reviews-Cedro_Adventures-Nairobi.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-500 hover:text-orange-600 font-semibold underline transition-colors duration-200"
+                    >
+                        TripAdvisor
+                    </Link>
+                    . Follow us on social media—{" "}
+                    <Link
+                        href="https://facebook.com/cedroadventuresEA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-500 hover:text-orange-600 font-semibold underline transition-colors duration-200"
+                    >
+                        Facebook
+                    </Link>
+                    , {" "}
+                    <Link
+                        href="https://www.instagram.com/cedroadventures"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-500 hover:text-orange-600 font-semibold underline transition-colors duration-200"
+                    >
+                        Instagram
+                    </Link>
+                    , {" "}
+                    <Link
+                        href="https://wa.me/+254721174008"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-500 hover:text-orange-600 font-semibold underline transition-colors duration-200"
+                    >
+                        WhatsApp
+                    </Link>
+                    , and{" "}
+                    <Link
+                        href="https://www.linkedin.com/company/cedro-adventures"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-orange-500 hover:text-orange-600 font-semibold underline transition-colors duration-200"
+                    >
+                        LinkedIn
+                    </Link>
+                    {" "}to stay updated with our latest adventures and special offers.
+                </p>
             </section>
 
             {/* our team section */}

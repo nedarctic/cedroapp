@@ -96,10 +96,10 @@ export default async function Home() {
           </p>
 
           {/* Safari Bookings */}
-          <Link href="https://www.safaribookings.com/p7696"
+          {/* <Link href="https://www.safaribookings.com/p7696"
             className="text-[#F0A823] text-sm sm:text-base font-normal py-2 px-4 rounded-full"
             target="_blank"
-          >Safari Bookings</Link>
+          >Safari Bookings</Link> */}
 
           {/* follow us on social media */}
           <div className="flex items-center space-x-2">
@@ -188,7 +188,7 @@ export default async function Home() {
       </section>
 
       {/* POPULAR TOURS SECTION */}
-      <section className="flex flex-col items-center w-full bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen flex flex-col items-center w-full bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
 
         {/* intro */}
         <p className="font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-black border border-black py-8 sm:py-10 px-6 sm:px-10 lg:px-16 max-w-4xl text-center my-8 sm:my-10">

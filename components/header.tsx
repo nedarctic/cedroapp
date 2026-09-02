@@ -49,7 +49,7 @@ export default function Header() {
                 <div className="hidden md:block">
                     <Link
                         href="/book"
-                        className="border border-white px-6 py-2 hover:bg-white hover:text-black transition"
+                        className="border-3 border-white px-6 py-2 hover:bg-white hover:text-black transition"
                     >
                         Book a tour
                     </Link>

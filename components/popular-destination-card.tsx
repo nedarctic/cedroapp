@@ -34,7 +34,7 @@ export function PopularDestinationCard({
       </p>
 
       {/* tours */}
-      <p className="absolute left-2 bottom-2 bg-yellow-400 px-2 py-1 text-black text-xs sm:text-sm font-medium z-20">
+      <p className="absolute left-2 bottom-2 bg-[#F0A823] px-2 py-1 text-black text-xs sm:text-sm font-medium z-20">
         {tours} Tour{tours !== 1 && "s"}
       </p>
     </div>

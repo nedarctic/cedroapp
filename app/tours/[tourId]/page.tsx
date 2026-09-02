@@ -102,7 +102,7 @@ export default async function Itinerary({ params }: { params: Promise<{ tourId: 
                     <div className="flex items-center flex-wrap justify-center">
                         <AiOutlineDollar size={20} className="mr-2 text-white" />
                         <p className="text-white text-base sm:text-lg font-normal">Price:</p>
-                        <span className="text-yellow-400 text-base sm:text-lg font-normal ml-2">{formattedPrice}</span>
+                        <span className="text-yellow-400 text-base sm:text-lg font-normal ml-2">{formattedPrice} / Person</span>
                     </div>
 
                     {/* book tour and contact us buttons */}

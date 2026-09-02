@@ -40,32 +40,35 @@ export default async function Destinations({ searchParams }: {
                 {/* popular destinations headline */}
                 <SectionHeadline title={"Popular Destinations"} color={"black"} />
 
-                <div className="md:w-xl sm:w-md w-sm px-4">
-                    <Search placeholder="Search destinations..." />
-                </div>
-
-                {/* grid with popular destination cards */}
-                <div className="flex flex-col justify-center items-center w-full max-w-7xl mx-auto mt-6 sm:mt-8 md:mt-10 lg:mt-12">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full">
-                        {destinations.map(({ name, id, destinationImage, totalTours }) => (
-                            <Link key={destinationImage} href={`/destinations/${id}`} className="block transition-transform hover:scale-[1.02] duration-300">
-                                <PopularDestinationCard
-                                    image={destinationImage}
-                                    destination={name}
-                                    tours={Number(totalTours)}
-                                />
-                            </Link>
-                        ))}
+                {(destinations && destinations.length > 0) ? <>
+                    <div className="md:w-xl sm:w-md w-sm px-4">
+                        <Search placeholder="Search destinations..." />
                     </div>
-                </div>
 
-                <PaginationComponent meta={meta} />
+                    {/* grid with popular destination cards */}
+                    <div className="flex flex-col justify-center items-center w-full max-w-7xl mx-auto mt-6 sm:mt-8 md:mt-10 lg:mt-12">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full">
+                            {destinations.map(({ name, id, destinationImage, totalTours }) => (
+                                <Link key={destinationImage} href={`/destinations/${id}`} className="block transition-transform hover:scale-[1.02] duration-300">
+                                    <PopularDestinationCard
+                                        image={destinationImage}
+                                        destination={name}
+                                        tours={Number(totalTours)}
+                                    />
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
 
-                {/* horizontal line & view all destinations button */}
-                <div className="w-full mt-8 sm:mt-10 md:mt-12 lg:mt-16">
-                    <ViewMore path={"destinations"} color={"white"} />
-                </div>
+                    <PaginationComponent meta={meta} />
 
+                    {/* horizontal line & view all destinations button */}
+                    <div className="w-full mt-8 sm:mt-10 md:mt-12 lg:mt-16">
+                        <ViewMore path={"destinations"} color={"white"} />
+                    </div>
+                </> : <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4">
+                    Our destinations are currently being updated. Please check back soon to explore the most sought-after places from Cedro Adventures.
+                </p>}
 
             </section>
         </main>

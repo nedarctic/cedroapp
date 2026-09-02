@@ -21,7 +21,7 @@ export default function Header() {
     const isActive = (href: string) => pathname === href;
 
     return (
-        <header className="bg-black text-white sticky top-0 z-50">
+        <header className="bg-[#615F36] text-white sticky top-0 z-50">
             <div className="flex items-center justify-between h-16 px-6">
 
                 {/* Logo */}
@@ -36,8 +36,8 @@ export default function Header() {
                             key={item.label}
                             href={item.href}
                             className={`text-[15px] transition-colors duration-200 ${isActive(item.href)
-                                ? 'text-[#FAD039]'
-                                : 'hover:text-[#FAD039]'
+                                ? 'text-[#F0A823]'
+                                : 'hover:text-[#F0A823]'
                                 }`}
                         >
                             {item.label}
@@ -90,8 +90,8 @@ export default function Header() {
                                         href={item.href}
                                         onClick={() => setMenuOpen(false)}
                                         className={`block text-lg ${isActive(item.href)
-                                            ? 'text-[#FAD039]'
-                                            : 'hover:text-[#FAD039]'
+                                            ? 'text-[#F0A823]'
+                                            : 'hover:text-[#F0A823]'
                                             }`}
                                     >
                                         {item.label}

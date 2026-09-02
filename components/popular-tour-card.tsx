@@ -35,12 +35,12 @@ export function PopularTourCard({
 
         <div className="absolute inset-0 z-10 bg-black/40" />
 
-        <p className="absolute left-2 top-2 bg-yellow-400 px-2 py-1 text-xs sm:text-sm text-black font-medium z-20">
+        <p className="absolute left-2 top-2 bg-[#F0A823] px-2 py-1 text-xs sm:text-sm text-black font-medium z-20">
           Popular
         </p>
 
         {special_offer && (
-          <p className="absolute left-2 top-10 sm:top-12 bg-yellow-400 px-2 py-1 text-xs sm:text-sm text-black font-medium z-20">
+          <p className="absolute left-2 top-10 sm:top-12 bg-[#F0A823] px-2 py-1 text-xs sm:text-sm text-black font-medium z-20">
             Special Offer
           </p>
         )}

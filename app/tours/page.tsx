@@ -41,51 +41,56 @@ export default async function Tours({ searchParams }: {
             {/* page title headline */}
             <SectionHeadline title={"All tours"} color={"black"} />
 
-            {/* search component */}
-            <div className="md:w-xl sm:w-md w-sm px-4">
-                <Search placeholder={"Search tours..."} />
-            </div>
 
-            {/* filters - responsive padding and width */}
-            <div className="w-full px-4 sm:px-6 md:px-8 lg:px-20 self-start">
-                <Filters filters={destinationNames!} />
-            </div>
+            {(tours && tours.length > 0) ? <>
+                {/* search component */}
+                <div className="md:w-xl sm:w-md w-sm px-4">
+                    <Search placeholder={"Search tours..."} />
+                </div>
 
-            {/* grid containing tour cards */}
-            <div className="w-full px-4 lg:w-11/12 flex flex-col justify-center items-center">
-                {tours.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full px-4 sm:px-0">
-                        {tours.map(({
-                            dates,
-                            groupSize,
-                            destination,
-                            duration,
-                            tourImage,
-                            price,
-                            title,
-                            id,
+                {/* filters - responsive padding and width */}
+                <div className="w-full px-4 sm:px-6 md:px-8 lg:px-20 self-start">
+                    <Filters filters={destinationNames!} />
+                </div>
 
-                        }) => <PopularTourCard
-                                key={title}
-                                dates={dates}
-                                group_size={groupSize}
-                                destination={destination?.name!}
-                                duration={duration}
-                                image={tourImage}
-                                price={price}
-                                title={title}
-                                link={`/tours/${id}`}
-                            />
-                        )}
-                    </div>
-                ) : (
-                    <p className="font-bold text-black text-md sm:text-lg text-center px-4">
-                        No tours match your query.
-                    </p>
-                )}
-            </div>
+                {/* grid containing tour cards */}
+                <div className="w-full px-4 lg:w-11/12 flex flex-col justify-center items-center">
+                    {tours.length > 0 ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full px-4 sm:px-0">
+                            {tours.map(({
+                                dates,
+                                groupSize,
+                                destination,
+                                duration,
+                                tourImage,
+                                price,
+                                title,
+                                id,
 
-            <PaginationComponent meta={meta} />
+                            }) => <PopularTourCard
+                                    key={title}
+                                    dates={dates}
+                                    group_size={groupSize}
+                                    destination={destination?.name!}
+                                    duration={duration}
+                                    image={tourImage}
+                                    price={price}
+                                    title={title}
+                                    link={`/tours/${id}`}
+                                />
+                            )}
+                        </div>
+                    ) : (
+                        <p className="font-bold text-black text-md sm:text-lg text-center px-4">
+                            No tours match your query.
+                        </p>
+                    )}
+                </div>
+
+                <PaginationComponent meta={meta} />
+            </> : <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4">
+                Our tours are currently being updated. Please check back soon to explore the most sought-after adventures from Cedro Adventures.
+            </p>}
 
         </main>
     );

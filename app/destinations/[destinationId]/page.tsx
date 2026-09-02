@@ -1,6 +1,7 @@
 // app/destinations/[destination]/page.tsx
 import { PopularTourCard } from "@/components/popular-tour-card";
 import { getDestination } from "@/lib/helpers/destinations.helpers";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function DestinationDetails({ params }: { params: Promise<{ destinationId: string }> }) {
@@ -20,6 +21,8 @@ export default async function DestinationDetails({ params }: { params: Promise<{
         tours: destinationTours
     } = destination;
 
+    console.log("destination", destination);
+
     if(!destinationTours || !destinationGuide) {
         return <div className="flex flex-col items-center justify-start min-h-screen w-full pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-6 md:px-8">
             <p>Failed to fetch destination details. Please refresh the page or try again later.</p>
@@ -33,7 +36,7 @@ export default async function DestinationDetails({ params }: { params: Promise<{
             <div className="flex flex-col space-y-2 sm:space-y-3 md:space-y-4 items-center justify-between w-full max-w-7xl">
                 <hr className="border border-black w-full" />
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black font-bold text-center px-4 break-words">
-                    {destinationTours?.[0].destination?.name.toUpperCase()}
+                    {destinationTours?.[0]?.destination?.name.toUpperCase()}
                 </h1>
                 <h1 className="text-lg sm:text-xl md:text-2xl text-black font-bold text-center">
                     Tours & Description
@@ -44,7 +47,7 @@ export default async function DestinationDetails({ params }: { params: Promise<{
             {/* Tours Section */}
             <section className="flex flex-col items-center justify-center w-full py-8 sm:py-12 md:py-16 lg:py-20">
                 <div className="flex flex-col justify-center items-center w-full max-w-7xl">
-                    {destinationTours!.length > 0 ? (
+                    {destinationTours && destinationTours.length > 0 ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full">
                             {destinationTours!.map(({ 
                                 id,
@@ -87,6 +90,10 @@ export default async function DestinationDetails({ params }: { params: Promise<{
                         <h2 className="underline underline-offset-8 text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2">
                             Destination Guide
                         </h2>
+                    </div>
+
+                    <div className="relative aspect-video max-w-7xl">
+                        <Image src={destination.destinationImage} alt="Destination Image" fill  />
                     </div>
 
                     {/* Guide Content */}

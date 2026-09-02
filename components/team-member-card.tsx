@@ -16,7 +16,7 @@ export function TeamMemberCard({ image, name, designation, description }: {image
                 <p className="text-white font-medium text-2xl">{name}</p>
 
                 {/* designation */}
-                <p className="text-yellow-400 font-medium text-xl">{designation}</p>
+                <p className="text-[#F0A823] font-medium text-xl">{designation}</p>
 
                 {/* description */}
                 <p className="text-white font-light text-sm">{description}</p>

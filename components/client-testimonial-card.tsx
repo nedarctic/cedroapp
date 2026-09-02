@@ -34,7 +34,7 @@ export function ClientTestimonialCard({ name, testimonial, country, image, image
                 <p className="font-medium text-white/90 text-sm sm:text-base md:text-lg leading-relaxed break-words w-full">
                     "{testimonial}"
                 </p>
-                <p className="font-medium text-yellow-400 text-sm sm:text-base break-words w-full">{country}</p>
+                <p className="font-medium text-[#F0A823] text-sm sm:text-base break-words w-full">{country}</p>
             </div>
 
             {/* Image right side */}

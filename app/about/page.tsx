@@ -6,6 +6,7 @@ import { TeamMemberCard } from "@/components/team-member-card";
 import { TravelStoryCard } from "@/components/travel-story-card";
 import { getThreeLatestBlogs } from "@/lib/helpers/blogs.helpers";
 import { getMembers } from "@/lib/helpers/team.helpers";
+import { TeamMember } from "@/lib/types/team-member";
 import Link from 'next/link';
 import { GrSchedulePlay } from "react-icons/gr";
 import { MdOutlineGroups2, MdOutlineLocalHotel } from "react-icons/md";
@@ -23,13 +24,13 @@ export default async function About() {
         <main className="min-h-screen w-full flex flex-col justify-center items-center overflow-x-hidden">
 
             {/* landing section */}
-            <section className="flex flex-col items-center justify-center bg-white w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
+            <section className="flex flex-col items-center justify-center bg-white w-full py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
 
                 {/* section headline */}
                 <SectionHeadline color={"black"} title={"About Cedro Adventures"} />
 
                 {/* description - responsive width and text size */}
-                <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 pb-12 sm:pb-16 md:pb-20 px-4">
+                <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center py-6 sm:py-8 md:py-10 px-4">
                     Cedro Adventures is a safari company born from the passion and expertise of a young African woman who, after working with prestigious five-star hotels in Tsavo and Maasai Mara National Parks and leading travel agencies across Africa, set out to fulfill her dream—crafting unforgettable travel experiences.
                 </p>
 
@@ -92,30 +93,50 @@ export default async function About() {
                 <SectionHeadline title={"Meet our team"} color={"white"} />
 
                 {/* grid containing team member cards - responsive grid */}
-                <div className="flex flex-col items-center w-full max-w-7xl mt-6 sm:mt-8 md:mt-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
-                        {members?.map((member) => (
-                            <TeamMemberCard
-                                key={member.name}
-                                image={member.memberImage}
-                                name={member.name}
-                                designation={member.designation}
-                                description={member.description}
-                            />
-                        ))}
-                    </div>
-                </div>
+                {members && members.length > 0 ? (
+                    <div className="flex flex-col items-center w-full max-w-7xl mt-6 sm:mt-8 md:mt-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+                            {members?.map((member) => (
+                                <TeamMemberCard
+                                    key={member.name}
+                                    image={member.memberImage}
+                                    name={member.name}
+                                    designation={member.designation}
+                                    description={member.description}
+                                />
+                            ))}
+                        </div>
+                    </div>) : (
+                    <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4">
+                        Our team is currently being updated. Please check back soon to meet the passionate individuals behind Cedro Adventures.
+                    </p>
+                )}
             </section>
 
             {/* WHAT OUR CLIENTS SAY SECTION */}
-            <section className="flex flex-col items-center justify-center w-full bg-black py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
+            <section className="relative overflow-hidden flex flex-col items-center justify-center w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8">
 
-                {/* section headline */}
-                <SectionHeadline title={"What our clients say"} color={"white"} />
+                {/* Blurred background */}
+                <div
+                    className="absolute inset-0 scale-110 bg-cover bg-center blur-[10px]"
+                    style={{
+                        backgroundImage:
+                            "url('/popular-tours/kenya-luxury-galore/kenya-luxury-galore-3.jpg')",
+                    }}
+                />
 
-                {/* carousel with travel story cards */}
-                <div className="w-full mt-6 sm:mt-8 md:mt-10">
-                    <CarouselTestimonial />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/30" />
+
+                {/* Content */}
+                <div className="relative z-10 w-full flex flex-col items-center">
+                    {/* section headline */}
+                    <SectionHeadline title={"What our clients say"} color={"white"} />
+
+                    {/* carousel with travel story cards */}
+                    <div className="w-full mt-6 sm:mt-8 md:mt-10">
+                        <CarouselTestimonial />
+                    </div>
                 </div>
             </section>
 
@@ -126,7 +147,7 @@ export default async function About() {
                 <SectionHeadline color={"black"} title="Our travel stories" />
 
                 {/* grid with travel story cards - responsive */}
-                <div className="w-full max-w-7xl mt-6 sm:mt-8 md:mt-10">
+                {(threeLatestBlogs && threeLatestBlogs.length > 0) ? <div className="w-full max-w-7xl mt-6 sm:mt-8 md:mt-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
                         {threeLatestBlogs?.map(({ title, blogImage, excerpt, date, id }) => (
                             <Link key={id} href={`/blogs/${id}`} className="block transition-transform hover:scale-[1.02] duration-300">
@@ -139,7 +160,9 @@ export default async function About() {
                             </Link>
                         ))}
                     </div>
-                </div>
+                </div> : <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4">
+                    Our travel stories are currently being updated. Please check back soon to read about the unforgettable experiences from Cedro Adventures.
+                </p>}
             </section>
         </main>
     );

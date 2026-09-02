@@ -63,7 +63,7 @@ export function NewsletterSignup() {
                     className="w-60 px-4 py-2 border border-black placeholder:text-gray-500"
                     placeholder="email@gmail.com" />
 
-                <button className="px-4 py-2 text-black bg-[#FAD039]">{loading ? "Signing up..." : "Sign up"}</button>
+                <button className="px-4 py-2 text-black bg-[#F0A823]">{loading ? "Signing up..." : "Sign up"}</button>
             </form>
         </div>
     );

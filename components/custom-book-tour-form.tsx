@@ -110,7 +110,7 @@ export function CustomBookTourForm() {
 
         <button
             type="submit"
-            className="w-full border border-black px-10 py-4 font-bold text-white bg-black hover:bg-white hover:text-black transition"
+            className="w-full px-10 py-4 font-bold text-white bg-[#615F36]"
         >
             {loading ? "Submitting..." : "Submit Booking Request"}
         </button>

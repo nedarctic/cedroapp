@@ -47,7 +47,7 @@ export default async function Home() {
         {/* landing page main content */}
         <div className="flex flex-col justify-center items-center flex-1 text-center space-y-4 sm:space-y-5 px-4 sm:px-6 md:px-8 z-20">
           <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-            Welcome to <span className="text-[#FAD039]">Cedro Adventures</span>
+            Welcome to <span className="text-[#A19528]">Cedro Adventures</span>
           </p>
           <p className="text-base sm:text-lg md:text-xl font-normal text-white px-2">
             Experience the Magic of Africa with Cedro Adventures
@@ -55,7 +55,7 @@ export default async function Home() {
 
           <Link
             href={'/tours'}
-            className="bg-[#FAD039] text-base sm:text-lg px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 text-black flex items-center justify-center space-x-2 font-medium hover:bg-[#e8c12e] transition-colors duration-200"
+            className="bg-[#A19528] text-base sm:text-lg px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 text-black flex items-center justify-center space-x-2 font-medium hover:bg-[#F0A823] transition-colors duration-200"
           >
             Explore Tours
             <FaArrowRightLong className="ml-2 w-5 h-3 sm:w-6 sm:h-4" />
@@ -72,22 +72,34 @@ export default async function Home() {
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
             <div className="flex space-x-1 text-white text-sm sm:text-base">
-              <FaTripadvisor className="text-yellow-400 w-5 h-5 sm:w-6 sm:h-6 mr-1 sm:mr-2" />
+              <FaTripadvisor className="text-bg-[#F0A823] w-5 h-5 sm:w-6 sm:h-6 mr-1 sm:mr-2" />
               TripAdvisor
             </div>
             <div className="flex items-center">
-              <TiStarFullOutline className="text-yellow-400 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              <TiStarFullOutline className="text-yellow-400 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              <TiStarFullOutline className="text-yellow-400 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              <TiStarFullOutline className="text-yellow-400 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-              <TiStarFullOutline className="text-yellow-400 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+              <TiStarFullOutline className="text-[#F0A823] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+              <TiStarFullOutline className="text-[#F0A823] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+              <TiStarFullOutline className="text-[#F0A823] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+              <TiStarFullOutline className="text-[#F0A823] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+              <TiStarFullOutline className="text-[#F0A823] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </div>
           </Link>
+
+          {/* TRA Licensed */}
+          <Link href="https://pub-79ed953562964dbfa4ff96ef322c18ac.r2.dev/license/CEDRO%20TRA%20LICENCE%202026.pdf"
+            className="bg-[#F0A823] text-sm sm:text-base font-normal text-black py-2 px-4 rounded-full"
+            target="_blank"
+          >TRA Licensed</Link>
 
           {/* marketing statement */}
           <p className="text-sm sm:text-base md:text-lg text-white text-center order-first sm:order-none">
             10 years of crafting adventures
           </p>
+
+          {/* Safari Bookings */}
+          <Link href="https://www.safaribookings.com/p7696"
+            className="text-[#F0A823] text-sm sm:text-base font-normal py-2 px-4 rounded-full"
+            target="_blank"
+          >Safari Bookings</Link>
 
           {/* follow us on social media */}
           <div className="flex items-center space-x-2">
@@ -97,6 +109,7 @@ export default async function Home() {
                 <Link
                   key={item.label}
                   href={item.href}
+                  target="_blank"
                   className="flex items-center text-gray-700 hover:text-white transition-colors duration-200"
                 >
                   {<item.logo className="w-5 h-5 sm:w-6 sm:h-6 text-white" />}
@@ -129,27 +142,49 @@ export default async function Home() {
       </section>
 
       {/* POPULAR DESTINATIONS SECTION */}
-      <section className="flex flex-col items-center w-full bg-black py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative flex flex-col items-center w-full overflow-hidden py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
 
-        <SectionHeadline title={"Popular Destinations"} color={"white"} />
+        {/* Blurred background */}
+        <div
+          className="absolute inset-0 scale-110 bg-cover bg-center blur-[10px]"
+          style={{
+            backgroundImage:
+              "url('/popular-tours/kenya-luxury-galore/kenya-luxury-galore-5.jpg')",
+          }}
+        />
 
-        <div className="w-full lg:w-11/12 max-w-7xl flex flex-col items-center">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/30" />
 
-          {/* Responsive grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full">
-            {destinations?.map(({ destinationImage, name, totalTours, id }) => (
-              <Link key={id} href={`/destinations/${id}`}>
-                <PopularDestinationCard
-                  image={destinationImage}
-                  destination={name}
-                  tours={totalTours!}
-                />
-              </Link>
-            ))}
-          </div>
+        {/* Content */}
+        <div className="relative z-10 w-full flex flex-col items-center">
 
-          <ViewMore path={"destinations"} color={"white"} />
+          <SectionHeadline
+            title="Popular Destinations"
+            color="white"
+          />
+
+          {(destinations && destinations.length > 0) ? <div className="w-full lg:w-11/12 max-w-7xl flex flex-col items-center">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full">
+              {destinations?.map(({ destinationImage, name, totalTours, id }) => (
+                <Link key={id} href={`/destinations/${id}`}>
+                  <PopularDestinationCard
+                    image={destinationImage}
+                    destination={name}
+                    tours={totalTours!}
+                  />
+                </Link>
+              ))}
+            </div>
+
+            <ViewMore path="destinations" color="white" />
+
+          </div> : <p className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4">
+            Our popular destinations are currently being updated. Please check back soon to explore the most sought-after places from Cedro Adventures.
+          </p>}
         </div>
+
       </section>
 
       {/* POPULAR TOURS SECTION */}
@@ -162,7 +197,7 @@ export default async function Home() {
 
         <SectionHeadline title={"Popular Tours"} color={"black"} />
 
-        <div className="w-full max-w-7xl flex flex-col items-center">
+        {(popularTours && popularTours.length > 0) ? <div className="w-full max-w-7xl flex flex-col items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 w-full">
             {popularTours?.map(({ id, title, destination, duration, dates, price, groupSize, tourImage }) =>
               <PopularTourCard
@@ -181,20 +216,38 @@ export default async function Home() {
           {/* horizontal line and view more tours */}
           <ViewMore path={"tours"} color={"black"} />
 
-        </div>
+        </div> : <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4">
+          Our popular tours are currently being updated. Please check back soon to explore the most sought-after adventures from Cedro Adventures.
+        </p>}
 
       </section>
 
       {/* WHAT OUR CLIENTS SAY SECTION */}
-      <section className="min-h-screen flex flex-col items-center justify-center w-full bg-black py-8 sm:py-12 md:py-16 px-4 sm:px-6">
+      <section className="relative flex flex-col items-center w-full overflow-hidden py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
 
-        {/* section headline */}
-        <SectionHeadline title={"What our clients say"} color={"white"} />
+        {/* Blurred background */}
+        <div
+          className="absolute inset-0 scale-110 bg-cover bg-center blur-[10px]"
+          style={{
+            backgroundImage:
+              "url('/popular-tours/kenya-luxury-galore/kenya-luxury-galore-3.jpg')",
+          }}
+        />
 
-        {/* carousel with travel story cards */}
-        <div className="w-full max-w-7xl mx-auto">
-          <CarouselTestimonial />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/30" />
+
+        {/* Content */}
+        <div className="relative z-10 w-full flex flex-col items-center">
+          {/* section headline */}
+          <SectionHeadline title={"What our clients say"} color={"white"} />
+
+          {/* carousel with travel story cards */}
+          <div className="w-full max-w-7xl mx-auto">
+            <CarouselTestimonial />
+          </div>
         </div>
+
 
       </section>
 
@@ -205,7 +258,7 @@ export default async function Home() {
         <SectionHeadline color={"black"} title="Our travel stories" />
 
         {/* grid with travel story cards */}
-        <div className="flex flex-col justify-center items-center w-11/12 max-w-7xl mx-auto">
+        {(latestBlogs && latestBlogs.length > 0) ? <div className="flex flex-col justify-center items-center w-11/12 max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 md:gap-8 w-full">
             {latestBlogs?.map(({ title, blogImage, excerpt, date, id }) => (
               <Link key={id} href={`/blogs/${id}`} className="w-full">
@@ -217,7 +270,9 @@ export default async function Home() {
           <div className="w-full mt-8 sm:mt-10 md:mt-12">
             <ViewMore path={"blogs"} color={"black"} />
           </div>
-        </div>
+        </div> : <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4">
+          Our travel stories are currently being updated. Please check back soon to read about the unforgettable experiences from Cedro Adventures.
+        </p>}
       </section>
 
     </main>

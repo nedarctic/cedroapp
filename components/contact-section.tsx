@@ -215,10 +215,10 @@ export const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2.5 sm:py-3 bg-black text-white hover:bg-gray-800 transition text-sm sm:text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#F0A823] text-black hover:bg-gray-800 transition text-sm sm:text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? "Sending..." : "Send message"}
-                  <Send className="w-4 h-4 text-white" />
+                  <Send className="w-4 h-4 text-black" />
                 </button>
               </div>
             </form>

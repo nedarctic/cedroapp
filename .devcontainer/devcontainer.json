@@ -1,0 +1,6 @@
+{
+  "name": "frontend service",
+  "service": "frontend",
+  "workspaceFolder": "/app",
+  "dockerComposeFile": "../../compose.yaml"
+}

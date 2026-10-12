@@ -25,8 +25,9 @@ export default function Header() {
             <div className="flex items-center justify-between h-16 px-6">
 
                 {/* Logo */}
-                <Link href="/">
+                <Link className="flex gap-2 items-center" href="/">
                     <Image src="/logos/cedroadventureslogo.svg" alt="Logo" width={40} height={40} />
+                    <p className="text-white font-bold text-lg">Cedro Adventures</p>
                 </Link>
 
                 {/* Desktop Menu */}

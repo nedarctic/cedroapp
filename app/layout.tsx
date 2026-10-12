@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { roboto } from "@/app/fonts";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -68,6 +69,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <WhatsAppButton />
         <Toaster richColors />
         <Footer />
       </body>

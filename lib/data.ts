@@ -134,9 +134,11 @@ export const pages_items = [
   { label: 'Contact', href: '/contact' },
 ];
 
+export const whatsappUrl = "https://wa.me/254721174008";
+
 export const social_items = [
   { label: 'Facebook', href: 'https://facebook.com/cedroadventuresEA', logo: PiFacebookLogoLight },
-  { label: 'WhatsApp', href: 'https://wa.me/+254721174008', logo: PiWhatsappLogoLight },
+  { label: 'WhatsApp', href: whatsappUrl, logo: PiWhatsappLogoLight },
   { label: 'Instagram', href: 'https://www.instagram.com/cedroadventures', logo: PiInstagramLogoLight },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/cedro-adventures', logo: PiLinkedinLogoLight },
 ];

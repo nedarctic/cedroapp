@@ -29,9 +29,9 @@ export default function TimelineComponent({itinerary}: {itinerary: Itinerary[]})
 
             {activities.map((activity, index) => (<TimelineContent key={index}>{activity}</TimelineContent>))}
 
-            <div className="relative w-full h-100 mt-4">
+            {dayImage && <div className="relative w-full h-100 mt-4">
               <Image src={dayImage} alt={`Day ${index + 1} image`} fill className="object-cover" />
-            </div>
+            </div>}
 
             <TimelineIndicator />
           </TimelineHeader>

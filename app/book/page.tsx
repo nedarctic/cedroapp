@@ -19,7 +19,7 @@ export default async function ToursPage() {
         />
 
         <p className="text-black text-base sm:text-lg md:text-xl lg:text-2xl font-normal w-full sm:w-3/4 lg:w-1/2 text-center pt-6 sm:pt-8 md:pt-10 px-4 leading-relaxed">
-          Submit a booking request using your name and email address for quick assistance with your tour experience from our team.
+          Share your contact details and tell us what kind of tour experience you are looking for. Our team will be in touch to help.
         </p>
 
         <CustomBookTourForm />

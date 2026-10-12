@@ -27,6 +27,7 @@ export default async function Tours({ searchParams }: {
     params.append("limit", limit);
     search && params.append("search", search);
     filter && params.append("filter", filter);
+    params.append('status', "PUBLISHED");
 
     const url = `${process.env.BACKEND_URL}/tours/paginated-tours?${params.toString()}`;
 

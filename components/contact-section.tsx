@@ -6,6 +6,16 @@ import { PiFacebookLogoLight, PiInstagramLogoLight, PiLinkedinLogo, PiXLogoLight
 import { StatusDialog } from './status-dialog';
 import { toast } from 'sonner';
 import z from 'zod';
+import PhoneInput, { isValidPhoneNumber, type Value } from "react-phone-number-input";
+
+const contactFormSchema = z.object({
+  name: z.string().trim().min(1, "Name required"),
+  email: z.email("Invalid email address"),
+  phone: z.string()
+    .min(1, "Phone number is required")
+    .refine(value => isValidPhoneNumber(value), "Enter a valid phone number"),
+  content: z.string().trim().min(1, "Message is required")
+});
 
 export const ContactSection = () => {
 
@@ -16,6 +26,7 @@ export const ContactSection = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState<Value>();
   const [message, setMessage] = useState('');
 
   const [loading, setLoading] = useState<boolean>(false);
@@ -27,13 +38,10 @@ export const ContactSection = () => {
     try {
       setLoading(true);
 
-      const validationResult = z.object({
-        name: z.string().trim().min(1, "Name required"),
-        email: z.email("Invalid email address"),
-        content: z.string().trim().min(1, "Message is required")
-      }).safeParse({
+      const validationResult = contactFormSchema.safeParse({
         name,
         email,
+        phone: phone ?? "",
         content: message
       });
 
@@ -53,6 +61,7 @@ export const ContactSection = () => {
         body: JSON.stringify({
           name,
           email,
+          phone,
           content: message
         })
       });
@@ -69,6 +78,7 @@ export const ContactSection = () => {
       toast.success("Message sent successfully. Our team shall be in contact shortly.")
       setName("");
       setEmail("");
+      setPhone(undefined);
       setMessage("");
       return;
 
@@ -183,6 +193,34 @@ export const ContactSection = () => {
                 />
                 {errors?.properties?.email?.errors?.length && <ul className="list-disc pl-4">
                   {errors.properties.email.errors.map((error: string, index: number) =>
+                    <li key={index} className="text-xs text-red-600 font-bold">{error}</li>
+                  )}
+                </ul>}
+              </div>
+
+              {/* Phone Field */}
+              <div className='flex flex-col gap-2'>
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                  Phone <span className="text-red-500">*</span>
+                </label>
+                <PhoneInput
+                  id="phone"
+                  name="phone"
+                  defaultCountry="KE"
+                  value={phone}
+                  onChange={setPhone}
+                  autoComplete="tel"
+                  placeholder="Enter phone number"
+                  className="w-full border border-gray-300 px-3 sm:px-4 focus-within:ring-2 focus-within:ring-black"
+                  numberInputProps={{
+                    className: "w-full bg-transparent py-2.5 sm:py-3 text-sm sm:text-base outline-none",
+                    "aria-invalid": Boolean(errors?.properties?.phone?.errors?.length),
+                    "aria-describedby": errors?.properties?.phone?.errors?.length ? "phone-error" : undefined,
+                    required: true
+                  }}
+                />
+                {errors?.properties?.phone?.errors?.length && <ul id="phone-error" className="list-disc pl-4">
+                  {errors.properties.phone.errors.map((error: string, index: number) =>
                     <li key={index} className="text-xs text-red-600 font-bold">{error}</li>
                   )}
                 </ul>}
